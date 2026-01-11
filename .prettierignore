@@ -1,0 +1,27 @@
+# dependencies
+node_modules
+
+# output
+dist
+out
+*.tgz
+
+# cache
+cache
+.cache
+.vitepress/cache
+.vitepress/dist
+
+# logs
+*.log
+
+# coverage
+coverage
+
+# env files
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
