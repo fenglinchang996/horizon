@@ -4,7 +4,7 @@
 
 ## Expansion
 
-With *expansion*, we enter something and it is expanded into something else before the shell acts upon it.
+With _expansion_, we enter something and it is expanded into something else before the shell acts upon it.
 
 ```bash
 $ echo *
@@ -19,11 +19,8 @@ The shell expands the `*` into something else (in this instance, the names of th
 The mechanism by which **wildcards work** is called pathname expansion.
 
 - `echo D*`
-
 - `echo *s`
-
 - `echo [[:upper:]]*`
-
 - `echo /usr/*/share`
 
 > Pathname Expansion of Hidden Files: As we know, filenames that begin with a period character are hidden. Pathname expansion also respects this behavior. We could include hidden files in an expansion by starting the pattern with a leading period, like this:
@@ -37,23 +34,14 @@ The mechanism by which **wildcards work** is called pathname expansion.
 Tilde expansion is a mechanism used in Unix-like operating systems to simplify referencing user home directories. It is particularly useful for navigating the filesystem efficiently. Here are some common uses of tilde expansion with explanations:
 
 1. **`~`**: Represents the current user's home directory.
-
    - Example: If the current user is `user1`, `~` expands to `/home/user1`.
-
 2. **`~username`**: Represents the specified user's home directory.
-
    - Example: `~john` expands to `/home/john`, assuming `john`'s home directory is located at `/home/john`.
-
 3. **`~/path/to/directory`**: Refers to a subdirectory or file within the current user's home directory.
-
    - Example: `~/Documents` expands to `/home/user1/Documents`, assuming the current user is `user1`.
-
 4. **`~+`**: Represents the current working directory.
-
    - Example: If the current working directory is `/var/www`, `~+` expands to `/var/www`.
-
 5. **`~-`**: Represents the previous working directory.
-
    - Example: If your previous working directory was `/usr/local`, `~-` expands to `/usr/local`.
 
 These expansions help users navigate the filesystem more conveniently, especially when working with scripts and command-line operations.
@@ -69,71 +57,64 @@ $((expression))
 Some examples:
 
 - `echo $(($((5**2)) * 3))` same as `echo $(((5**2) * 3))`
-
 - `echo Five divided by two equals $((5/2))`
-
 - `echo with $((5%2)) left over.`
 
 ### Brace Expansion
 
-- Comman-separated expansion:
+- Comma-separated expansion:
 
-   ```bash
-   {item1,item2,...,itemN} 
-   ```
+  ```bash
+  {item1,item2,...,itemN}
+  ```
 
-   Examples:
+  Examples:
 
-   ```bash
-   $ echo Front-{A,B,C}-Back
-   Front-A-Back Front-B-Back Front-C-Back
-   ```
+  ```bash
+  $ echo Front-{A,B,C}-Back
+  Front-A-Back Front-B-Back Front-C-Back
+  ```
 
 - Range expansion:
 
-   ```bash
-   {start...end}
-   ```
+  ```bash
+  {start...end}
+  ```
 
-   Examples:
+  Examples:
 
-   ```bash
-   $ echo Number_{1..5}
-   Number_1 Number_2 Number_3 Number_4 Number_5
-   ```
+  ```bash
+  $ echo Number_{1..5}
+  Number_1 Number_2 Number_3 Number_4 Number_5
+  ```
 
-   ```bash
-   $ echo {01..15}
-   01 02 03 04 05 06 07 08 09 10 11 12 13 14 15
-   ```
+  ```bash
+  $ echo {01..15}
+  01 02 03 04 05 06 07 08 09 10 11 12 13 14 15
+  ```
 
-   ```bash
-   $ echo {Z..A}
-   Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
-   ```
+  ```bash
+  $ echo {Z..A}
+  Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
+  ```
 
 - Nested brace expansion:
 
-   Examples:
+  Examples:
 
-   ```bash
-   $ echo a{A{1,2},B{3,4}}b
-   aA1b aA2b aB3b aB4b
-   ```
+  ```bash
+  $ echo a{A{1,2},B{3,4}}b
+  aA1b aA2b aB3b aB4b
+  ```
 
 ### Parameter Expansion
 
-- **(Shell) [Parameters](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameters.html)**: A *parameter* is an entity that stores values. It can be a name, a number, or one of the some [special characters](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html).
-
-   - **Postitional Parameters**: To be discussed later.
-
-   - **[Special Parameters](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)**: To be discussed later.
-
-   - **Variables**: A *variable* is a parameter denoted by a name.
-
-      - **Local variables**: variables that local to a single shell by default. They are not inherited by child shells.
-
-      - **[Environment](https://www.gnu.org/software/bash/manual/html_node/Environment.html) variables**: When a program is invoked it is given an array of strings called the *environment*. This is a list of name-value pairs, of the form `name=value`. On invocation, the shell scans its own environment and creates a parameter for each name found. These environment variables can influence the operation of software on the system, providing a mechanism for configuration and control. More details will be discussed later.
+- **(Shell) [Parameters](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameters.html)**: A _parameter_ is an entity that stores values. It can be a name, a number, or one of the some [special characters](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html).
+  - **Positional Parameters**: To be discussed later.
+  - **[Special Parameters](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)**: To be discussed later.
+  - **Variables**: A _variable_ is a parameter denoted by a name.
+    - **Local variables**: variables that are local to a single shell by default. They are not inherited by child shells.
+    - **[Environment](https://www.gnu.org/software/bash/manual/html_node/Environment.html) variables**: When a program is invoked it is given an array of strings called the _environment_. This is a list of name-value pairs, of the form `name=value`. On invocation, the shell scans its own environment and creates a parameter for each name found. These environment variables can influence the operation of software on the system, providing a mechanism for configuration and control. More details will be discussed later.
 
 A parameter is set if it has been assigned a value. The null string is a valid value. A variable may be assigned to by a statement of the form:
 
@@ -147,7 +128,7 @@ The `$` character introduces parameter expansion. The basic form of parameter ex
 ${parameter}
 ```
 
-The value of *parameter* is substituted. The braces are *optional* but required when *parameter* is a positional parameter with more than one digit, or when *parameter* is followed by a character that is not to be interpreted as part of its name.
+The value of _parameter_ is substituted. The braces are _optional_ but required when _parameter_ is a positional parameter with more than one digit, or when _parameter_ is followed by a character that is not to be interpreted as part of its name.
 
 Examples:
 
@@ -200,14 +181,12 @@ $ ls -l $(which python)
 
 ## Quoting
 
-The shell provides a mechanism called *quoting* to selectively suppress unwanted expansions.
+The shell provides a mechanism called _quoting_ to selectively suppress unwanted expansions.
 
 ### Double quotes
 
 - If we place text inside double quotes, all the special characters used by the shell lose their special meaning and are treated as ordinary characters. The exceptions are `$`, `\` (backslash), and `` ` `` (back-quote).
-
-- This means that word-splitting, pathname expansion, tilde expansion, and brace expansion are suppressed, but *parameter expansion*, *arithmetic expansion*, and *command substitution* are still carried out.
-
+- This means that word-splitting, pathname expansion, tilde expansion, and brace expansion are suppressed, but _parameter expansion_, _arithmetic expansion_, and _command substitution_ are still carried out.
 - By default, word-splitting looks for the presence of **spaces**, **tabs**, and **newlines** (linefeed characters) and treats them as **delimiters** between words. This means unquoted spaces, tabs, and newlines are not considered to be part of the text. They serve only as **separators**.
 
 Examples：
@@ -328,19 +307,19 @@ this is a T   E   S   T
 
 The backslash (\\) is also used as part of a notation to represent certain special characters called **control codes**.
 
-Adding the `-e` option to `echo` with double quote will enable interpretation of escape sequences. Alternatively, you can place them inside `$' '`. In Zsh, the escape sequences are automatically interpretated.
+Adding the `-e` option to `echo` with double quotes will enable interpretation of escape sequences. Alternatively, you can place them inside `$' '`. In Zsh, the escape sequences are automatically interpreted.
 
 **Common Escape Sequence**
 
-| Escape Sequence | Meaning | 
-|---|---|
-| \\a | Bell (an alert that causes the computer to beep) | 
-| \\b | Backspace | 
-| \\n | Newline. On Unix-like systems, this produces a linefeed. | 
-| \\r | Carriage return | 
-| \\t | Tab | 
-| \\uHHHH | the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value *HHHH* (one to four hex digits) | 
-| \\UHHHHHHHH | the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value *HHHHHHHH* (one to eight hex digits) | 
+| Escape Sequence | Meaning                                                                                                         |
+| --------------- | --------------------------------------------------------------------------------------------------------------- |
+| \\a             | Bell (an alert that causes the computer to beep)                                                                |
+| \\b             | Backspace                                                                                                       |
+| \\n             | Newline. On Unix-like systems, this produces a linefeed.                                                        |
+| \\r             | Carriage return                                                                                                 |
+| \\t             | Tab                                                                                                             |
+| \\uHHHH         | the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value _HHHH_ (one to four hex digits)      |
+| \\UHHHHHHHH     | the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value _HHHHHHHH_ (one to eight hex digits) |
 
 ```bash
 # Bash

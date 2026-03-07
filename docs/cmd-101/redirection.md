@@ -3,24 +3,22 @@
 ## I/O Redirection
 
 - I: Input
-
 - O: Output
 
-With I/O redirection, we can redirect the input and output of commands to and from files, as well as connect multiple commands together into powerful command *pipelines*.
+With I/O redirection, we can redirect the input and output of commands to and from files, as well as connect multiple commands together into powerful command _pipelines_.
 
 ## Standard Input, Output, and Error
 
 ### Output
 
 - The program’s results
-
 - Status and error messages
 
- "Everything is a file" in Linux, those outputs are sent to the file called ***standard output*** (***stdout***) and ***standard error*** (***stderr***)
+"Everything is a file" in Linux, those outputs are sent to the file called **_standard output_** (**_stdout_**) and **_standard error_** (**_stderr_**)
 
 ### Input
 
-- Input from the facility (keyboard by default) —> these input are called ***standard input*** (***stdin***)
+- Input from the facility (keyboard by default) —> this input is called **_standard input_** (**_stdin_**)
 
 ## Redirecting Standard Output (`>`, `>>`)
 
@@ -45,13 +43,12 @@ $ ls -l /usr/bin >> ls-output.txt
 
 If the file does not already exist, it is created just as though the > operator had been used.
 
-> If you set *noclobber* (i.e., `$ setopt noclobber` ) option, the shell will not allow I/O redirection to destroy an existing file, meaning that it prevent the `>` redirection operator from overwriting existing files. Additionally, it stops the `>>` operator from automatically creating a file when attempting to append data to a non-existent file.
-
+> If you set _noclobber_ (i.e., `$ setopt noclobber` ) option, the shell will not allow I/O redirection to destroy an existing file, meaning that it prevent the `>` redirection operator from overwriting existing files. Additionally, it stops the `>>` operator from automatically creating a file when attempting to append data to a non-existent file.
 > You can still use `>|` operator to forcefully overwrite a file, even if the `noclobber` option is set in the shell
 
 ## Redirecting Standard Error (`2>`)
 
-A program can produce output on any of serveral numbered file streams. While we have referred to the first 3 of these file streams as standard input, output and error, the shell references them internally as file descriptors 0, 1 and 2, respectively. The shell provides a notation for redirecting files using the file descriptor number. Since standard error is the same as file descriptor number 2, we can redirect standard error with `2>` notation:
+A program can produce output on any of several numbered file streams. While we have referred to the first 3 of these file streams as standard input, output and error, the shell references them internally as file descriptors 0, 1 and 2, respectively. The shell provides a notation for redirecting files using the file descriptor number. Since standard error is the same as file descriptor number 2, we can redirect standard error with `2>` notation:
 
 ```bash
 $ ls -l /bin/usr 2> ls-error.txt
@@ -97,7 +94,7 @@ $ cat > lazy_dog.txt
 
 If `cat` is not given any arguments, it reads from standard input and since standard input is, by default, attached to the keyboard, it's waiting for us to type something.
 
-Type some content and rember to type `Ctrl-D` at the end to tell `cat` that it has reached end of file (EOF) on standard input.
+Type some content and remember to type `Ctrl-D` at the end to tell `cat` that it has reached end of file (EOF) on standard input.
 
 Let’s try redirecting standard input via the `<` redirection operator:
 
@@ -112,12 +109,12 @@ This shows that using a file as a source of standard input.
 Using the pipe operator `|` (vertical bar), the standard output of one command can be piped into the standard input of another.
 
 ```bash
-command1｜command2
+command1 | command2
 ```
 
 > The difference between `>` and `|`:
 >
-> Simply put, the **redirection** operator *connects a command with a file*, while the **pipeline** operator *connects the output of one command with the input of a second command*.
+> Simply put, the **redirection** operator _connects a command with a file_, while the **pipeline** operator _connects the output of one command with the input of a second command_.
 
 ### Filters
 

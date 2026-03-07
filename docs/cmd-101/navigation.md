@@ -42,7 +42,6 @@ A pathname is the route taken along the file system branches to reach a target d
 ### **Relative Pathnames**
 
 - Relative pathnames **start from the current working directory**.
-
 - They use special notations to represent relative positions in the file system tree:
   - `.` **(dot):** Refers to the **current working directory**.
   - `..` **(dot dot):** Refers to the working directory's **parent directory**.
