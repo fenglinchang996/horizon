@@ -1,4 +1,4 @@
-# shoreline
+# horizon
 
 To install dependencies:
 
