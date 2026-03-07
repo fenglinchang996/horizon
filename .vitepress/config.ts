@@ -21,6 +21,22 @@ export default defineConfig({
                 text: 'Exploring the System',
                 link: '/cmd-101/exploring-the-system',
               },
+              {
+                text: 'Manipulating Files and Directories',
+                link: '/cmd-101/manipulating-files-and-directories',
+              },
+              {
+                text: 'Seeing the World as the Shell Sees It',
+                link: '/cmd-101/seeing-the-world-as-the-shell-sees-it',
+              },
+              { text: 'Redirection', link: '/cmd-101/redirection' },
+              { text: 'Permissions', link: '/cmd-101/permissions' },
+              { text: 'Processes', link: '/cmd-101/processes' },
+              { text: 'The Environment', link: '/cmd-101/the-environment' },
+              {
+                text: 'Advanced Keyboard Tricks',
+                link: '/cmd-101/advanced-keyboard-tricks',
+              },
             ],
           },
         ],
