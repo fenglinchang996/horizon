@@ -37,6 +37,24 @@ export default defineConfig({
                 text: 'Advanced Keyboard Tricks',
                 link: '/cmd-101/advanced-keyboard-tricks',
               },
+              {
+                text: 'Formatting Output',
+                link: '/cmd-101/formatting-output',
+              },
+              { text: 'Networking', link: '/cmd-101/networking' },
+              {
+                text: 'Package Management',
+                link: '/cmd-101/package-management',
+              },
+              {
+                text: 'Regular Expressions',
+                link: '/cmd-101/regular-expressions',
+              },
+              {
+                text: 'Searching for Files',
+                link: '/cmd-101/searching-for-files',
+              },
+              { text: 'Text Processing', link: '/cmd-101/text-processing' },
             ],
           },
         ],
