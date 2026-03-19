@@ -29,7 +29,7 @@ Where `name` is the name of the function and `commands` is a series of commands 
 Inside shell functions, it is often disirable to have *local variables*. Local variables are only accessible within the shell function in which they are defined and cease to exist once the shell function terminates.
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 # local-vars: script to demonstrate local variables
 

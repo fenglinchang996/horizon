@@ -90,7 +90,7 @@ It is interesting to note that both `test` and `[` are actually commands. In `ba
 An example:
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 # test-file: Evaluate the status of a file
 
@@ -150,7 +150,7 @@ fi
 An Example:
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 # test-string: evaluate the value of a string
 
 ANSWER=maybe
@@ -188,7 +188,7 @@ If the string is not empty, we evaluate the value of the string to see whether i
 An example:
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 # test-integer: evaluate the value of an integer.
 
@@ -232,7 +232,7 @@ STRING1 =~ REGEX
 An example:
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 # test-integer2: evaluate the value of an integer.
 
 INT=-5
@@ -261,7 +261,7 @@ Another added feature of `[[ ]]` is that the `==` operator supports pattern matc
 same way pathname expansion does.
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 FILE=foo.bar
 
@@ -275,7 +275,7 @@ fi
 `bash` provides the `(( ))` compound conmmand, which is used to perform arithmetic truth tests. Using `(( ))`, we can simplfy the testing on integer operations:
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 INT=-5
 
@@ -320,7 +320,7 @@ We will focus on `[[ ]]` and `(( ))` since they are more convenient and useful t
 An example of an AND operation:
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 # test-integer3: determine if an integer is within a
 # specified range of values.
@@ -344,7 +344,7 @@ fi
 An example of an NOT operation:
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 # test-integer4: determine if an integer is outside a
 # specified range of values.

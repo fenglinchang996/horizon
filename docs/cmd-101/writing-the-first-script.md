@@ -5,7 +5,7 @@
 The Example：
 
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This is our first script.
 
