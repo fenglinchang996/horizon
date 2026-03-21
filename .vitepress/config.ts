@@ -91,6 +91,10 @@ export default defineConfig({
                     text: 'Flow Control: Looping with while/until',
                     link: '/cmd-101/flow-control-loop-with-while-and-until',
                   },
+                  {
+                    text: 'Flow Control: Branching with case',
+                    link: '/cmd-101/flow-control-branching-with-case',
+                  },
                 ],
               },
             ],
