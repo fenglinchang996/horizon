@@ -95,6 +95,10 @@ export default defineConfig({
                     text: 'Flow Control: Branching with case',
                     link: '/cmd-101/flow-control-branching-with-case',
                   },
+                  {
+                    text: 'Positional Parameters',
+                    link: '/cmd-101/positional-parameters',
+                  },
                 ],
               },
             ],
