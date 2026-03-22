@@ -99,6 +99,10 @@ export default defineConfig({
                     text: 'Positional Parameters',
                     link: '/cmd-101/positional-parameters',
                   },
+                  {
+                    text: 'Flow Control: Looping with for',
+                    link: '/cmd-101/flow-control-looping-with-for',
+                  },
                 ],
               },
             ],
