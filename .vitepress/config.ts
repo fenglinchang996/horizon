@@ -103,6 +103,10 @@ export default defineConfig({
                     text: 'Flow Control: Looping with for',
                     link: '/cmd-101/flow-control-looping-with-for',
                   },
+                  {
+                    text: 'Strings and Numbers',
+                    link: '/cmd-101/strings-and-numbers',
+                  },
                 ],
               },
             ],
