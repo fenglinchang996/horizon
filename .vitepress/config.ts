@@ -107,6 +107,10 @@ export default defineConfig({
                     text: 'Strings and Numbers',
                     link: '/cmd-101/strings-and-numbers',
                   },
+                  {
+                    text: 'Arrays',
+                    link: '/cmd-101/arrays',
+                  },
                 ],
               },
             ],
