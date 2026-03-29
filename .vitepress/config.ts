@@ -111,6 +111,10 @@ export default defineConfig({
                     text: 'Arrays',
                     link: '/cmd-101/arrays',
                   },
+                  {
+                    text: 'Exotica',
+                    link: '/cmd-101/exotica',
+                  },
                 ],
               },
             ],
