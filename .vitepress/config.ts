@@ -14,6 +14,7 @@ export default defineConfig({
           { text: ' 首頁', link: '/' },
           {
             text: 'Command Line 101',
+            collapsed: false,
             items: [
               {
                 text: 'Learning the Shell',
@@ -114,6 +115,50 @@ export default defineConfig({
                   {
                     text: 'Exotica',
                     link: '/cmd-101/exotica',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            text: 'Front-end Interview Q&A',
+            collapsed: false,
+            items: [
+              {
+                text: 'JavaScript',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'Overview',
+                    link: '/fe-qa/js-qa/',
+                  },
+                  {
+                    text: 'Grammar',
+                    link: '/fe-qa/js-qa/grammar',
+                  },
+                  {
+                    text: 'Types & Objects',
+                    link: '/fe-qa/js-qa/types-and-objects',
+                  },
+                  {
+                    text: 'Function & Scope',
+                    link: '/fe-qa/js-qa/functions-and-scope',
+                  },
+                  {
+                    text: 'Arrays',
+                    link: '/fe-qa/js-qa/arrays',
+                  },
+                  {
+                    text: 'Async',
+                    link: '/fe-qa/js-qa/async',
+                  },
+                  {
+                    text: 'Logic and Algorithms',
+                    link: '/fe-qa/js-qa/logic-and-algorithms',
+                  },
+                  {
+                    text: 'Prototypes and Inheritance',
+                    link: '/fe-qa/js-qa/prototypes-and-inheritance',
                   },
                 ],
               },
