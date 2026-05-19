@@ -1,0 +1,294 @@
+# Vector Spaces
+
+## 1.1 Introduction
+
+This section introduces the fundamental operations of vectors through physical and geometric intuition, and uses these operations to describe lines and planes in space. These geometric properties serve as the foundation for the abstract definition of "vector spaces" in subsequent sections.
+
+### Physical and Geometric Intuition
+
+#### Vector
+
+::: info Definition
+An entity possessing both magnitude and direction (e.g., force, velocity). Geometrically, it is typically represented by an arrow.
+:::
+
+#### Vector Addition
+
+::: info Parallelogram Law for Vector Addition
+The sum $x + y$ of two vectors $x$ and $y$ acting at the same point $P$ can be represented as the diagonal of the parallelogram having $x$ and $y$ as adjacent sides.
+:::
+
+#### Scalar Multiplication
+
+Multiplying a vector $x$ by a real number $t$ (a scalar).
+
+- If $t > 0$, the vector $tx$ has the same direction as the original vector $x$; if $t < 0$, it has the opposite direction.
+- The magnitude (length) of the vector is stretched or shrunk by a factor of $|t|$.
+- If two nonzero vectors $x$ and $y$ satisfy $y = tx$ (where $t$ is a nonzero real number), the two vectors are said to be **parallel**.
+
+### Algebraic Descriptions of Vector Operations in the Plane
+
+- Through analytic geometry, we can place vectors in a coordinate system. Usually, the initial point is set at the origin, and the vector is represented by the coordinates of its terminal point.
+- Vector addition and scalar multiplication in a plane or in space will always satisfy the following 8 basic properties:
+  1. **Commutativity of addition**: For all vectors $x, y$, we have $x + y = y + x$.
+  2. **Associativity of addition**: For all vectors $x, y, z$, we have $(x + y) + z = x + (y + z)$.
+  3. **Existence of zero vector**: There exists a vector $\mathbf{0}$ such that $x + \mathbf{0} = x$ for all vectors $x$.
+  4. **Existence of additive inverse**: For each vector $x$, there exists a vector $y$ such that $x + y = \mathbf{0}$.
+  5. **Multiplicative identity**: $1x = x$.
+  6. **Associativity of scalar multiplication**: For all real numbers $a, b$ and vector $x$, $(ab)x = a(bx)$.
+  7. **Distributivity of scalar over vector addition**: $a(x + y) = ax + ay$.
+  8. **Distributivity of scalar addition over vector**: $(a + b)x = ax + bx$.
+
+### Equations of Lines and Planes in Space
+
+Using vector addition and scalar multiplication, we can concisely describe lines and planes in space:
+
+::: info Equation of a Line
+A line passing through two distinct points $A$ and $B$ in space can be expressed as:
+$$x = u + t(v - u)$$
+Here, $u$ and $v$ are the position vectors pointing from the origin to points $A$ and $B$ respectively, and $t$ is any real number. The term $v - u$ represents the direction vector from $A$ to $B$.
+:::
+
+::: info Equation of a Plane
+A plane containing three noncollinear points $A$, $B$, and $C$ can be expressed as:
+$$x = A + su + tv$$
+Here, $u$ is the vector pointing from $A$ to $B$, $v$ is the vector pointing from $A$ to $C$, and $s, t$ are any real numbers.
+:::
+
+## 1.2 Vector Spaces
+
+In this section, the formal definition of a vector space is introduced, abstracting the eight basic properties observed in Section 1.1. It also provides several fundamental examples of vector spaces that will be used throughout the study of linear algebra.
+
+### Formal Definition of a Vector Space
+
+::: info Definition
+
+A **vector space** (or **linear space**) $\mathsf{V}$ over a field $F$ consists of a set on which two operations (called **addition** and **scalar multiplication**) are defined so that for each pair of elements $x, y$ in $\mathsf{V}$ there is a unique element $x + y$ in $\mathsf{V}$, and for each element $a$ in $F$ and each element $x$ in $\mathsf{V}$ there is a unique element $ax$ in $\mathsf{V}$ satisfying the following eight conditions:
+
+- **(VS 1) Commutativity of addition:** For all $x, y \in \mathsf{V}$, $x + y = y + x$.
+- **(VS 2) Associativity of addition:** For all $x, y, z \in \mathsf{V}$, $(x + y) + z = x + (y + z)$.
+- **(VS 3) Existence of zero vector:** There exists an element in $\mathsf{V}$ denoted by $\mathbf{0}$ such that $x + \mathbf{0} = x$ for each $x \in \mathsf{V}$.
+- **(VS 4) Existence of additive inverse:** For each element $x \in \mathsf{V}$, there exists an element $y \in \mathsf{V}$ such that $x + y = \mathbf{0}$.
+- **(VS 5) Multiplicative identity:** For each element $x \in \mathsf{V}$, $1x = x$.
+- **(VS 6) Associativity of scalar multiplication:** For each pair of elements $a, b \in F$ and each $x \in \mathsf{V}$, $(ab)x = a(bx)$.
+- **(VS 7) Distributivity of scalar over vector addition:** For each $a \in F$ and each pair $x, y \in \mathsf{V}$, $a(x + y) = ax + ay$.
+- **(VS 8) Distributivity of vector over scalar addition:** For each pair of elements $a, b \in F$ and each $x \in \mathsf{V}$, $(a + b)x = ax + bx$.
+
+:::
+
+> **Terminology Note:** Elements of the field $F$ are called **scalars**, and elements of the vector space $\mathsf{V}$ are called **vectors**.
+> Every vector space is regarded as a vector space over a given field and we often restrict our attention to the fields of real and complex numbers, which are denoted $R$ and $C$, respectively.
+> Also note that the word "vector" is now being used to describe any element of a vector space, not the the physical entity discussed in previous section.
+
+### Important Examples of Vector Spaces
+
+The textbook introduces several algebraic systems that satisfy the definition of a vector space:
+
+#### $n$-tuples ($\mathsf{F}^n$)
+
+::: info $n$-tuple
+An object of the form $(a_1, a_2, \dots, a_n)$, where the entries $a_1, a_2, \dots, a_n$ are elements of a field $F$ is called $n$-tuple.
+The elements $a_1, a_2, \dots, a_n$ are called the **entries** or **components** of the $n$-tuple.
+Two $n$-tuples $(a_1, a_2, \dots, a_n)$ and $(b_1, b_2, \dots, b_n)$ with entries from a field $F$ are called equal if $a_i = b_i$ for $i = 1, 2, \dots, n$.
+:::
+
+The set of all $n$-tuples $(a_1, a_2, \dots, a_n)$ with entries from a field $F$ is denoted by $\mathsf{F}^n$.
+This set is a vector space over $F$ with the operations of coordinatewise addition and scalar multiplication; that is, if $u = (a_1, a_2, \dots, a_n) \in \mathsf{F}^n$, $v = (b_1, b_2, \dots, b_n) \in \mathsf{F}^n$ and $c \in F$, then
+
+$$
+u + v = (a_1 + b_1, a_2 + b_2, \dots, a_n + b_n) \quad and \quad cu = (ca_1, ca_2, \dots, ca_n).
+$$
+
+Vectors in $\mathsf{F}^n$ may be written as **column vectors**:
+
+$$
+\begin{pmatrix}
+a_1 \\
+a_2 \\
+\vdots \\
+a_n
+\end{pmatrix}
+$$
+
+rather than as **row vectors** $(a_1,a_2,\dots,a_n)$.
+
+> Since a 1-tuple whose only entry is from $F$ can be regarded as an element of $F$, we usually write $F$ rather than $\mathsf{F}^1$ for the vector space of 1-tuples with entry from $F$
+
+#### Matrices as a Vector Space ($\mathsf{M}_{m \times n}(F)$)
+
+::: info Matrix
+An $m \times n$ matrix with entries from a field $F$ is a rectangular array of the form
+
+$$
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}
+$$
+
+where each entry $a_{ij}$ ($1 \le i \le m, 1 \le j \le n$) is an element of $F$.
+:::
+
+- The rows of the matrix are regarded as vectors in $\mathsf{F}^n$, and the columns are regarded as vectors in $\mathsf{F}^m$.
+- We can also regard a row / column vector in $\mathsf{F}^n$ / $\mathsf{F}^m$ as $1 \times n$ / $m \times 1$ matrix with entries from $F$.
+- We denote matrices by capital italic letters and we denote the entry of a matrix $A$ that lies in row $i$ and column $j$ by $A_{ij}$.
+- The $m \times n$ matrix in which each entry equals zero is called the **zero matrix** and is denoted by $O$.
+- If the number of rows and columns of a matrix are equal, the matrix is called **square**.
+- Two $m \times n$ matrices $A$ and $B$ are called **equal** if all their corresponding entries are equal, that is, if $A_{ij}=B_{ij}$ for $1 \le i \le m, 1 \le j \le n$.
+
+The set of all $m \times n$ matrices with entries from a field $F$ is a vector space, which we denote by $\mathsf{M}_{m \times n}(F)$, with the standard operations of **matrix addition** and **scalar multiplication**:
+For $A,B \in \mathsf{M}_{m \times n}(F)$ and $c \in F$,
+
+$$
+(A+B)_{ij} = A_{ij} + B_{ij} \quad \text{and} \quad (cA)_{ij} = cA_{ij}
+$$
+
+#### Functions as a Vector Space ($\mathcal{F}(S, F)$)
+
+The set of all functions from a nonempty set $S$ to a field $F$ is denoted by $\mathcal{F}(S, F)$.
+Two functions $f$ and $g$ are equal if $f(s) = g(s)$ for each $s \in S$.
+The set $\mathcal{F}(S, F)$ is a vector space with operations are defined for $f, g \in \mathcal{F}(S,F)$ and $c \in F$ by
+
+$$
+(f+g)(s) = f(s) + g(s) \quad \text{and} \quad (cf)(s) = c[f(s)]
+$$
+
+for each $s \in S$.
+
+#### Polynomials as a Vector Space ($\mathsf{P}(F)$)
+
+::: info Polynomials
+A polynomials with coefficients from a field $F$ is an expression of the form
+
+$$
+f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \dots + a_{1}x + a_0
+$$
+
+where $n$ is a nononegative integer and each $a_k$, called the **coefficients** of $x^k$, is in $F$.
+:::
+
+::: info The Degree of a Polynomial
+The degree of a polynomial is defined to be the largest exponent of $x$ that appears in the representation of the polynomial form.
+$f(x)$ is called the **zero polynomial** if $f(x) = 0$, and its degree is defined to be -1. The polynomials of degree 0 may be written in the form $f(x) = c$ for some nonzero scalar $c$.
+:::
+
+Two polynomials,
+
+$$
+f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \dots + a_{1}x + a_0
+$$
+
+and
+
+$$
+f(x) = b_{m}x^{m} + b_{m-1}x^{m-1} + \dots + b_{1}x + b_0
+$$
+
+are called equal if $m = n$ and $a_i = b_i$ for $i = 0, 1, \dots, n$.
+
+Let
+
+$$
+f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \dots + a_{1}x + a_0
+$$
+
+and
+
+$$
+f(x) = b_{m}x^{m} + b_{m-1}x^{m-1} + \dots + b_{1}x + b_0
+$$
+
+be polynomials with coefficients from a field $F$. Suppose that $m \le n$, and define $b_{m+1} = b_{m+2} = \dots = b_n = 0$, Then $g(x)$ can be written as
+
+$$
+g(x) = b_{n}x^n + b_{n-1}x^{n-1} + \dots +b_{1}x + b_0
+$$
+
+Define
+
+$$
+f(x) + g(x) = (a_n + b_n)x^n + (a_{n-1} + b_{n-1})x^{n-1} + \dots + (a_1 + b_1)x + (a_0 + b_0)
+$$
+
+and
+
+$$
+cf(x) = ca_{n}x^n + ca_{n-1}x^{n-1} + \dots + ca_{1}x + ca_0
+$$
+
+for $c \in F$.
+
+With these operations, the set of all polynomials with coefficients from $F$ is a vector speace, which we denote by $P(F)$.
+
+### Elementary Consequences of the Definition
+
+From the eight axioms, we can derive several basic algebraic properties of vector spaces:
+
+::: info Theorem 1.1 (Cancellation Law for Vector Addition).
+If $x, y,$ and $z$ are vectors in a vector space $\mathsf{V}$ such that $x + z = y + z$, then $x = y$.
+:::
+
+::: info Corollary 1.
+The vector $\mathsf{0}$ described in (VS 3) is unique.
+:::
+
+> The vector $\mathbf{0}$ is called **zero vecotr** of $\mathsf{V}$.
+
+::: info Corollary 2.
+The vector $y$ described in (VS 4) is unique.
+:::
+
+> The vector $y$ in (VS 4) is called the **additive inverse** of $x$ and is denoted by $-x$.
+
+::: info Theorem 1.2.
+In any vector space $\mathsf{V}$, the following statements are true:
+
+1. $0x = \mathsf{0}$ for each $x \in \mathsf{V}$.
+2. $(-a)x = -(ax) = a(-x)$ for each $a \in F$ and each $x \in \mathsf{V}$.
+3. $a\mathsf{0} = \mathsf{0}$ for each $a \in F$.
+
+:::
+
+## 1.3 Subspaces
+
+In the study of vector spaces, we often find that certain subsets of a vector space themselves possess the structure of a vector space under the exact same operations. This section formally defines these subsets and provides a simplified method for identifying them without having to verify all eight vector space axioms.
+
+### Formal Definition of a Subspace
+
+::: info Definition
+A subset $\mathsf{W}$ of a vector space $\mathsf{V}$ over a field $F$ is called a **subspace** of $\mathsf{V}$ if $\mathsf{W}$ is a vector space over $F$ with the operations of addition and scalar multiplication defined on $\mathsf{V}$.
+:::
+
+> $\mathsf{V}$ and $\{\mathbf{0}\}$ (zero subspace of $\mathsf{V}$) are subsepaces.
+
+Verifying all eight vector space axioms for a subset $\mathsf{W}$ can be tedious. However, because the vectors in $\mathsf{W}$ are also vectors in $\mathsf{V}$, properties that apply to all vectors in $\mathsf{V}$ (such as commutativity, associativity, and distributivity) are automatically inherited by the vectors in $W$. Therefore, to determine if a subset is a subspace, we only need to verify the existence of the zero vector and the closure of the operations.
+
+Thus a subset $\mathsf{W}$ of a vector space $\mathsf{V}$ is a subspace of $\mathsf{V}$ if and only if the following 4 properites hold:
+
+- $x + y \in \mathsf{W}$ whenever $x \in \mathsf{W}$ and $y \in \mathsf{W}$. ($\mathsf{W}$ is **closed under addition**.)
+- $cx \in \mathsf{W}$ whenever $c \in F$ and $x \in \mathsf{W}$ ($\mathsf{W}$ is **closed under scalar multiplication**.)
+- $\mathsf{W}$ has zero vector.
+- Each vector in $\mathsf{W}$ has an additive inverse in $\mathsf{W}$. (This one is actually redundant)
+
+> For a subset $W$ to be a subspace, it must be completely self-contained with respect to vector addition and scalar multiplication. If you take any vectors inside $W$ and perform these operations on them, the resulting vectors must not "escape" the subset $W$. Additionally, since it must be a vector space in its own right, it must contain the zero vector.
+
+### The Subspace Test (Theorem 1.3)
+
+::: info Theorem 1.3
+Let $\mathsf{V}$ be a vector space and $\mathsf{W}$ a subset of $\mathsf{V}$. Then $\mathsf{W}$ is a subspace of $\mathsf{V}$ if and only if the following three conditions hold for the operations defined in $\mathsf{V}$:
+
+1. $\mathbf{0} \in \mathsf{W}$. (The zero vector of $\mathsf{W}$ and $\mathsf{V}$ are the same)
+2. $x + y \in \mathsf{W}$ whenever $x \in \mathsf{W}$ and $y \in \mathsf{W}$ (This is known as being **closed under addition**).
+3. $cx \in \mathsf{W}$ whenever $c \in F$ and $x \in \mathsf{W}$ (This is known as being **closed under scalar multiplication**).
+
+:::
+
+### Intersection of Subspaces (Theorem 1.4)
+
+::: info Theorem 1.4
+Any intersection of subspaces of a vector space $\mathsf{V}$ is a subspace of $\mathsf{V}$.
+:::
+
+> The union of subspaces of $\mathsf{V}$ is not necessarily a subspace of $\mathsf{V}$.
