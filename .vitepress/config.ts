@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -6,6 +6,9 @@ export default defineConfig({
 
   title: 'FLC 的工程師生存筆記',
   description: '對這個世界發出吶喊，即使所有人都無動於衷。',
+  markdown: {
+    math: true,
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     sidebar: [
@@ -164,10 +167,20 @@ export default defineConfig({
               },
             ],
           },
+          {
+            text: 'Linear Algebra',
+            collapsed: true,
+            items: [
+              {
+                text: 'Vector Spaces',
+                link: '/linear-algebra/1-vector-spaces',
+              },
+            ],
+          },
         ],
       },
     ],
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
   },
-})
+});
