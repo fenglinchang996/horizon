@@ -292,3 +292,106 @@ Any intersection of subspaces of a vector space $\mathsf{V}$ is a subspace of $\
 :::
 
 > The union of subspaces of $\mathsf{V}$ is not necessarily a subspace of $\mathsf{V}$.
+
+## 1.4 Linear Combinations and Systems of Linear Equations
+
+### 1. Linear Combinations
+
+::: info Definition
+Let $\mathsf{V}$ be a vector space and $S$ be a nonempty subset of $\mathsf{V}$.
+A vector $v \in \mathsf{V}$ is called a **linear combination** of vectors of $S$ if there exist a finite number of vectors $u_1, u_2, \dots, u_n$ in $S$ and scalars $a_1, a_2, \dots, a_n$ in $F$ such that:
+
+$$
+v = a_{1}u_{1} + a_{2}u_{2} + \dots + a_{n}u_{n}
+$$
+
+In this case, we also say that $v$ is a linear combination of $u_1, u_2, \dots, u_n$, and $a_1, a_2, \dots, a_n$ are called the **coefficients** of the linear combination.
+:::
+
+> A linear combination is the most general way to construct a new vector using addition and scalar multiplication.
+> Geometrically, if you have two non-parallel vectors in $\mathbb{R}^3$, their linear combinations fill out a 2D plane.
+> The term "linear" signifies that we only use first-power scaling and addition—no multiplying vectors by each other or applying non-linear functions.
+
+### 2. The Span of a Set
+
+::: info Definition
+Let $S$ be a nonempty subset of a vector space $\mathsf{V}$.
+The **span** of $S$, denoted by $\text{span}(S)$, is the set of all linear combinations of the vectors in $S$.
+For convenience, we define $\text{span}(\emptyset) = \{\mathbf{0}\}$.
+:::
+
+::: info Theorem 1.5
+The span of any subset $S$ of a vector space $\mathsf{V}$ is a **subspace** of $\mathsf{V}$.
+Moreover, any subspace of $\mathsf{V}$ that contains $S$ must also contain the span of $S$.
+:::
+
+> The span represents the "reach" of a set $S$. While $S$ itself might just be a collection of isolated arrows, $\text{span}(S)$ "fills in the gaps" to form a complete, stable subspace. It is the "smallest" subspace because it contains only what is absolutely necessary to satisfy the closure axioms of a vector space.
+
+### 3. Generating Sets
+
+::: info Definition
+A subset $S$ of a vector space $\mathsf{V}$ **generates** (or **spans**) $\mathsf{V}$ if $\text{span}(S) = \mathsf{V}$.
+In this case, we also say that the vectors in $S$ generate(span) $\mathsf{V}$.
+:::
+
+> If $S$ generates $\mathsf{V}$, it means every single vector in the entire space $\mathsf{V}$ can be expressed as some linear combination of the vectors in $S$. This is a powerful idea: it allows us to describe an infinite space using only a small, finite set of "building blocks."
+
+## 1.5 Linear Dependence and Linear Independence
+
+Suppose that $\mathsf{V}$ is a vector space over an infinite field and that $\mathsf{W}$ is a subspace of $\mathsf{V}$.
+Unless $\mathsf{W}$ is the zero subspace, $\mathsf{W}$ is an infinite set.
+It is desirable to find a "small" finite subset $S$ of $\mathsf{W}$ that generates $\mathsf{W}$ because we can then describe each vector in $\mathsf{W}$ as a linear combination of the finite number of vectors in $S$.
+
+### Linear Dependence
+
+A subset $S$ of a vector space $\mathsf{V}$ is called **linearly dependent** if there exist a finite number of distinct vectors $u_1, u_2, \dots, u_n$ in $S$ and scalars $a_1, a_2, \dots, a_n$ in $F$, **not all zero**, such that:
+
+$$
+a_{1}u_{1} + a_{2}u_{2} + \dots + a_{n}u_{n} = \mathbf{0}
+$$
+
+For any vectors $u_1, u_2, \dots, u_n$, we have $a_{1}u_{1} + a_{2}u_{2} + \dots + a_{n}u_{n} = \mathbf{0}$ if $a_1 = a_2 = \dots = a_n = 0$.
+This is so called the **trivial representation** of $\mathbf{0}$ as a linear combination of $u_1, u_2, \dots, u_n$.
+
+If a set is linearly dependent, it means there is a "non-trivial" way to combine the vectors to get the zero vector.
+
+Consequently, any subset of a vector space that contains the zero vector is automatically linearly dependent, because $1 \cdot \mathbf{0} = \mathbf{0}$ is a non-trivial representation of zero.
+
+### Linear Independence
+
+A subset $S$ of a vector space $\mathsf{V}$ that is not linearly dependent is called **linearly independent**.
+In other words, for any finite number of distinct vectors $u_1, u_2, \dots, u_n$ in $S$, the only way to satisfy the equation $\sum a_{i}u_{i} = \mathbf{0}$ is the **trivial representation**:
+
+$$
+a_1 = a_2 = \dots = a_n = 0
+$$
+
+- The empty set is linearly independent, for linearly dependent sets must be nonempty.
+- A set consisting of a single nonzero vector is linearly independent.
+  For if $\{u\}$ is linearly dependent, then $au = \mathbf{0}$ for some nonzero scalar $a$.
+  Thus
+
+  $$
+  u = a^{-1}(au) = a^{-1}\mathbf{0} = \mathbf{0}
+  $$
+
+- A set is linearly independent if and only if the only representation of $\mathbf{0}$ as linear combinations of its vectors are trivial representations.
+
+> Linear independence means every vector in the set brings "new" information to the span. No vector in an independent set can be "constructed" from the others. These vectors are effectively the "minimum necessary" to generate their span.
+
+### Key Theorems
+
+::: info Theorem 1.6
+Let $\mathsf{V}$ be a vector space, and let $S_1 \subseteq S_2 \subseteq \mathsf{V}$. If $S_1$ is linearly dependent, then $S_2$ is linearly dependent.
+:::
+
+::: info Corollary
+Let $\mathsf{V}$ be a vector space, and let $S_1 \subseteq S_2 \subseteq \mathsf{V}$. If $S_2$ is linearly independent, then $S_1$ is linearly independent.
+:::
+
+::: info Theorem 1.7
+Let $S$ be a linearly independent subset of $\mathsf{V}$, and let $v$ be a vector in $\mathsf{V}$ that is not in $S$.
+Then $S \cup \{v\}$ is linearly dependent **if and only if** $v \in \text{span}(S)$.
+:::
+
+> Theorem 1.7 provides a practical rule: if you want to keep a set independent while adding a new vector $v$, you must make sure $v$ is _not_ already reachable by the vectors you already have (i.e., $v \notin \text{span}(S)$).
