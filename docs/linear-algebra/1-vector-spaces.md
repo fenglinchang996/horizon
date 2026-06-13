@@ -86,7 +86,7 @@ A **vector space** (or **linear space**) $\mathsf{V}$ over a field $F$ consists 
 
 > **Terminology Note:** Elements of the field $F$ are called **scalars**, and elements of the vector space $\mathsf{V}$ are called **vectors**.
 > Every vector space is regarded as a vector space over a given field and we often restrict our attention to the fields of real and complex numbers, which are denoted $R$ and $C$, respectively.
-> Also note that the word "vector" is now being used to describe any element of a vector space, not the the physical entity discussed in previous section.
+> Also note that the word "vector" is now being used to describe any element of a vector space, not the physical entity discussed in the previous section.
 
 ### Important Examples of Vector Spaces
 
@@ -95,7 +95,7 @@ The textbook introduces several algebraic systems that satisfy the definition of
 #### $n$-tuples ($\mathsf{F}^n$)
 
 ::: info $n$-tuple
-An object of the form $(a_1, a_2, \dots, a_n)$, where the entries $a_1, a_2, \dots, a_n$ are elements of a field $F$ is called $n$-tuple.
+An object of the form $(a_1, a_2, \dots, a_n)$, where the entries $a_1, a_2, \dots, a_n$ are elements of a field $F$, is called an $n$-tuple.
 The elements $a_1, a_2, \dots, a_n$ are called the **entries** or **components** of the $n$-tuple.
 Two $n$-tuples $(a_1, a_2, \dots, a_n)$ and $(b_1, b_2, \dots, b_n)$ with entries from a field $F$ are called equal if $a_i = b_i$ for $i = 1, 2, \dots, n$.
 :::
@@ -120,7 +120,7 @@ $$
 
 rather than as **row vectors** $(a_1,a_2,\dots,a_n)$.
 
-> Since a 1-tuple whose only entry is from $F$ can be regarded as an element of $F$, we usually write $F$ rather than $\mathsf{F}^1$ for the vector space of 1-tuples with entry from $F$
+> Since a 1-tuple whose only entry is from $F$ can be regarded as an element of $F$, we usually write $F$ rather than $\mathsf{F}^1$ for the vector space of 1-tuples with entries from $F$.
 
 #### Matrices as a Vector Space ($\mathsf{M}_{m \times n}(F)$)
 
@@ -157,7 +157,7 @@ $$
 
 The set of all functions from a nonempty set $S$ to a field $F$ is denoted by $\mathcal{F}(S, F)$.
 Two functions $f$ and $g$ are equal if $f(s) = g(s)$ for each $s \in S$.
-The set $\mathcal{F}(S, F)$ is a vector space with operations are defined for $f, g \in \mathcal{F}(S,F)$ and $c \in F$ by
+The set $\mathcal{F}(S, F)$ is a vector space with operations defined for $f, g \in \mathcal{F}(S,F)$ and $c \in F$ by
 
 $$
 (f+g)(s) = f(s) + g(s) \quad \text{and} \quad (cf)(s) = c[f(s)]
@@ -168,18 +168,18 @@ for each $s \in S$.
 #### Polynomials as a Vector Space ($\mathsf{P}(F)$)
 
 ::: info Polynomials
-A polynomials with coefficients from a field $F$ is an expression of the form
+A polynomial with coefficients from a field $F$ is an expression of the form
 
 $$
 f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \dots + a_{1}x + a_0
 $$
 
-where $n$ is a nononegative integer and each $a_k$, called the **coefficients** of $x^k$, is in $F$.
+where $n$ is a nonnegative integer and each $a_k$, called the **coefficient** of $x^k$, is in $F$.
 :::
 
 ::: info The Degree of a Polynomial
-The degree of a polynomial is defined to be the largest exponent of $x$ that appears in the representation of the polynomial form.
-$f(x)$ is called the **zero polynomial** if $f(x) = 0$, and its degree is defined to be -1. The polynomials of degree 0 may be written in the form $f(x) = c$ for some nonzero scalar $c$.
+The degree of a polynomial is defined to be the largest exponent of $x$ that appears in the representation of the polynomial.
+$f(x)$ is called the **zero polynomial** if $f(x) = 0$, and its degree is defined to be -1. Polynomials of degree 0 may be written in the form $f(x) = c$ for some nonzero scalar $c$.
 :::
 
 Two polynomials,
@@ -191,7 +191,7 @@ $$
 and
 
 $$
-f(x) = b_{m}x^{m} + b_{m-1}x^{m-1} + \dots + b_{1}x + b_0
+g(x) = b_{m}x^{m} + b_{m-1}x^{m-1} + \dots + b_{1}x + b_0
 $$
 
 are called equal if $m = n$ and $a_i = b_i$ for $i = 0, 1, \dots, n$.
@@ -205,13 +205,13 @@ $$
 and
 
 $$
-f(x) = b_{m}x^{m} + b_{m-1}x^{m-1} + \dots + b_{1}x + b_0
+g(x) = b_{m}x^{m} + b_{m-1}x^{m-1} + \dots + b_{1}x + b_0
 $$
 
-be polynomials with coefficients from a field $F$. Suppose that $m \le n$, and define $b_{m+1} = b_{m+2} = \dots = b_n = 0$, Then $g(x)$ can be written as
+be polynomials with coefficients from a field $F$. Suppose that $m \le n$, and define $b_{m+1} = b_{m+2} = \dots = b_n = 0$. Then $g(x)$ can be written as
 
 $$
-g(x) = b_{n}x^n + b_{n-1}x^{n-1} + \dots +b_{1}x + b_0
+g(x) = b_{n}x^n + b_{n-1}x^{n-1} + \dots + b_{1}x + b_0
 $$
 
 Define
@@ -228,7 +228,7 @@ $$
 
 for $c \in F$.
 
-With these operations, the set of all polynomials with coefficients from $F$ is a vector speace, which we denote by $P(F)$.
+With these operations, the set of all polynomials with coefficients from $F$ is a vector space, which we denote by $P(F)$.
 
 ### Elementary Consequences of the Definition
 
@@ -242,7 +242,7 @@ If $x, y,$ and $z$ are vectors in a vector space $\mathsf{V}$ such that $x + z =
 The vector $\mathsf{0}$ described in (VS 3) is unique.
 :::
 
-> The vector $\mathbf{0}$ is called **zero vecotr** of $\mathsf{V}$.
+> The vector $\mathbf{0}$ is called the **zero vector** of $\mathsf{V}$.
 
 ::: info Corollary 2.
 The vector $y$ described in (VS 4) is unique.
@@ -269,11 +269,11 @@ In the study of vector spaces, we often find that certain subsets of a vector sp
 A subset $\mathsf{W}$ of a vector space $\mathsf{V}$ over a field $F$ is called a **subspace** of $\mathsf{V}$ if $\mathsf{W}$ is a vector space over $F$ with the operations of addition and scalar multiplication defined on $\mathsf{V}$.
 :::
 
-> $\mathsf{V}$ and $\{\mathbf{0}\}$ (zero subspace of $\mathsf{V}$) are subsepaces.
+> $\mathsf{V}$ and $\{\mathbf{0}\}$ (the zero subspace of $\mathsf{V}$) are subspaces.
 
 Verifying all eight vector space axioms for a subset $\mathsf{W}$ can be tedious. However, because the vectors in $\mathsf{W}$ are also vectors in $\mathsf{V}$, properties that apply to all vectors in $\mathsf{V}$ (such as commutativity, associativity, and distributivity) are automatically inherited by the vectors in $W$. Therefore, to determine if a subset is a subspace, we only need to verify the existence of the zero vector and the closure of the operations.
 
-Thus a subset $\mathsf{W}$ of a vector space $\mathsf{V}$ is a subspace of $\mathsf{V}$ if and only if the following 4 properites hold:
+Thus a subset $\mathsf{W}$ of a vector space $\mathsf{V}$ is a subspace of $\mathsf{V}$ if and only if the following 4 properties hold:
 
 - $x + y \in \mathsf{W}$ whenever $x \in \mathsf{W}$ and $y \in \mathsf{W}$. ($\mathsf{W}$ is **closed under addition**.)
 - $cx \in \mathsf{W}$ whenever $c \in F$ and $x \in \mathsf{W}$ ($\mathsf{W}$ is **closed under scalar multiplication**.)
@@ -307,7 +307,7 @@ Any intersection of subspaces of a vector space $\mathsf{V}$ is a subspace of $\
 
 ::: info Definition
 Let $\mathsf{V}$ be a vector space and $S$ be a nonempty subset of $\mathsf{V}$.
-A vector $v \in \mathsf{V}$ is called a **linear combination** of vectors of $S$ if there exist a **finite** number of vectors $u_1, u_2, \dots, u_n$ in $S$ and scalars $a_1, a_2, \dots, a_n$ in $F$ such that:
+A vector $v \in \mathsf{V}$ is called a **linear combination** of vectors of $S$ if there exist **finitely many** vectors $u_1, u_2, \dots, u_n$ in $S$ and scalars $a_1, a_2, \dots, a_n$ in $F$ such that:
 
 $$
 v = a_{1}u_{1} + a_{2}u_{2} + \dots + a_{n}u_{n}
@@ -339,7 +339,7 @@ Moreover, any subspace of $\mathsf{V}$ that contains $S$ must also contain the s
 
 ::: info Definition
 A subset $S$ of a vector space $\mathsf{V}$ **generates** (or **spans**) $\mathsf{V}$ if $\text{span}(S) = \mathsf{V}$.
-In this case, we also say that the vectors in $S$ generate(span) $\mathsf{V}$.
+In this case, we also say that the vectors in $S$ generate, or span, $\mathsf{V}$.
 :::
 
 > If $S$ generates $\mathsf{V}$, it means every single vector in the entire space $\mathsf{V}$ can be expressed as some linear combination of the vectors in $S$. This is a powerful idea: it allows us to describe an infinite space using only a small, finite set of "building blocks."
@@ -359,7 +359,7 @@ a_{1}u_{1} + a_{2}u_{2} + \dots + a_{n}u_{n} = \mathbf{0}
 $$
 
 For any vectors $u_1, u_2, \dots, u_n$, we have $a_{1}u_{1} + a_{2}u_{2} + \dots + a_{n}u_{n} = \mathbf{0}$ if $a_1 = a_2 = \dots = a_n = 0$.
-This is so called the **trivial representation** of $\mathbf{0}$ as a linear combination of $u_1, u_2, \dots, u_n$.
+This is called the **trivial representation** of $\mathbf{0}$ as a linear combination of $u_1, u_2, \dots, u_n$.
 
 If a set is linearly dependent, it means there is a "non-trivial" way to combine the vectors to get the zero vector.
 
@@ -412,14 +412,14 @@ We also define the "size" of a vector space, known as its dimension.
 ### Definition of a Basis
 
 ::: info Definition
-A **basis** $\beta$ for a vector space $\mathsf{V}$ is a **linearly independent** subset of $\mathsf{V}$ that generate $\mathsf{V}$ (i.e., $\text{span}(\beta) = \mathsf{V}$).
+A **basis** $\beta$ for a vector space $\mathsf{V}$ is a **linearly independent** subset of $\mathsf{V}$ that generates $\mathsf{V}$ (i.e., $\text{span}(\beta) = \mathsf{V}$).
 If $\beta$ is a basis for $\mathsf{V}$, we also say that the vectors of $\beta$ **form a basis** for $\mathsf{V}$.
 :::
 
 > A basis is a "Goldilocks" set. It has enough vectors to reach everywhere in the space (spanning), but not so many that any of them are redundant (linearly independent).
 > In a sense, it is the most efficient generating set possible for $\mathsf{V}$.
 
-- $\varnothing$ is a basis of $\mathbf{0}$ since $\text{span}(\varnothing) = \{\mathbf{0}\}$ and $\varnothing$ is linearly independent.
+- $\varnothing$ is a basis of $\{\mathbf{0}\}$ since $\text{span}(\varnothing) = \{\mathbf{0}\}$ and $\varnothing$ is linearly independent.
 - The standard basis of $\mathsf{F}^n$ is $\{e_1, e_2, \dots, e_n\}$, where $e_1 = (1, 0, 0, \dots, 0), e_2 = (0, 1, 0, \dots, 0), \dots, e_n = (0, 0, 0, \dots, 1)$.
 - The basis of $M_{m \times n}(F)$ is $\{E_{ij}: 1 \le i \le m, 1 \le j \le n\}$, where $E_{ij}$ is the matrix with a 1 in the $(i,j)$ position and 0 elsewhere.
 - For $\mathsf{P}_n(F)$, ${\{1, x, x^2, \dots, x^n\}}$ is the standard basis.
@@ -429,7 +429,7 @@ If $\beta$ is a basis for $\mathsf{V}$, we also say that the vectors of $\beta$ 
 
 ::: info Theorem 1.8
 Let $\mathsf{V}$ be a vector space and $u_1, u_2, \dots, u_n$ be distinct vectors in $\mathsf{V}$.
-Then $\beta = \{u_1, u_2, \dots, u_n\}$ is a basis for $\mathsf{V}$ if and only if each $v \in \mathsf{V}$ can be **uniquely** expressed as a linear combination of vectors at $\beta$, that is, in the form:
+Then $\beta = \{u_1, u_2, \dots, u_n\}$ is a basis for $\mathsf{V}$ if and only if each $v \in \mathsf{V}$ can be **uniquely** expressed as a linear combination of vectors in $\beta$, that is, in the form:
 
 $$
 v = a_1u_1 + a_2u_2 + \dots + a_nu_n
@@ -459,7 +459,7 @@ Then $m \le n$ and there exists a subset $H$ of $G$ containing exactly $n - m$ v
 
 ::: info Corollary 1
 Let $\mathsf{V}$ be a vector space having a finite basis.
-Then all bases for $\mathsf{V}$ are finite, and erery basis for $\mathsf{V}$ contains the same number of vector.
+Then all bases for $\mathsf{V}$ are finite, and every basis for $\mathsf{V}$ contains the same number of vectors.
 :::
 
 ### Dimension of a Vector Space
@@ -479,18 +479,18 @@ Then all bases for $\mathsf{V}$ are finite, and erery basis for $\mathsf{V}$ con
 Let $\mathsf{V}$ be a vector space with $\text{dim}(\mathsf{V}) = n$:
 
 1. Any finite generating set for $\mathsf{V}$ must contain at least $n$ vectors. If it has exactly $n$ vectors, it is a basis.
-2. Any linearly independent subset of $\mathsf{V}$ contains exactly $n$ vectors is a basis for $\mathsf{V}$.
+2. Any linearly independent subset of $\mathsf{V}$ that contains exactly $n$ vectors is a basis for $\mathsf{V}$.
 3. Every linearly independent subset of $\mathsf{V}$ can be **extended** to a basis for $\mathsf{V}$.
    That is, if $L$ is a linearly independent subset of $\mathsf{V}$, then there is a basis $\beta$ of $\mathsf{V}$ such that $L \subseteq \beta$.
 
 :::
 
-We can summarize the main results of these definition, theorem, and corollaries:
+We can summarize the main results of these definitions, theorems, and corollaries:
 
-- A basis for a vector space $\mathsf{V}$ is a linearly independent subset of $\mathsf{V}$ that generate $\mathsf{V}$.
+- A basis for a vector space $\mathsf{V}$ is a linearly independent subset of $\mathsf{V}$ that generates $\mathsf{V}$.
 - If $\mathsf{V}$ has a finite basis, then every basis for $\mathsf{V}$ contains the same number of vectors.
   This number $n$ is called the dimension of $\mathsf{V}$, and $\mathsf{V}$ is said to be finite-dimensional,
-- Every linearly independent subset of $\mathsf{V}$ contains no more than $n$ vectors and can be extend to a basis for $\mathsf{V}$ by including appropriately chosen vectors.
+- Every linearly independent subset of $\mathsf{V}$ contains no more than $n$ vectors and can be extended to a basis for $\mathsf{V}$ by including appropriately chosen vectors.
 - Each generating set of $\mathsf{V}$ contains at least $n$ vectors and can be reduced to a basis for $\mathsf{V}$ by excluding appropriately chosen vectors.
 
 ### The Dimension of Subspaces
@@ -502,7 +502,7 @@ Moreover, if $\text{dim}(\mathsf{W}) = \text{dim}(\mathsf{V})$, then $\mathsf{V}
 :::
 
 ::: info Corollary
-If $\mathsf{W}$ is a subspace of a finite-dimensional vector space $\mathsf{V}$, then any basis for \mathsf{W} can be extended to a basis for $\mathsf{V}$.
+If $\mathsf{W}$ is a subspace of a finite-dimensional vector space $\mathsf{V}$, then any basis for $\mathsf{W}$ can be extended to a basis for $\mathsf{V}$.
 :::
 
 > A "room" (subspace) cannot have more dimensions than the "building" (vector space) it is inside of.
