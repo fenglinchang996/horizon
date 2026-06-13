@@ -45,13 +45,21 @@ Using vector addition and scalar multiplication, we can concisely describe lines
 
 ::: info Equation of a Line
 A line passing through two distinct points $A$ and $B$ in space can be expressed as:
-$$x = u + t(v - u)$$
+
+$$
+x = u + t(v - u)
+$$
+
 Here, $u$ and $v$ are the position vectors pointing from the origin to points $A$ and $B$ respectively, and $t$ is any real number. The term $v - u$ represents the direction vector from $A$ to $B$.
 :::
 
 ::: info Equation of a Plane
 A plane containing three noncollinear points $A$, $B$, and $C$ can be expressed as:
-$$x = A + su + tv$$
+
+$$
+x = A + su + tv
+$$
+
 Here, $u$ is the vector pointing from $A$ to $B$, $v$ is the vector pointing from $A$ to $C$, and $s, t$ are any real numbers.
 :::
 
@@ -476,6 +484,14 @@ Let $\mathsf{V}$ be a vector space with $\text{dim}(\mathsf{V}) = n$:
    That is, if $L$ is a linearly independent subset of $\mathsf{V}$, then there is a basis $\beta$ of $\mathsf{V}$ such that $L \subseteq \beta$.
 
 :::
+
+We can summarize the main results of these definition, theorem, and corollaries:
+
+- A basis for a vector space $\mathsf{V}$ is a linearly independent subset of $\mathsf{V}$ that generate $\mathsf{V}$.
+- If $\mathsf{V}$ has a finite basis, then every basis for $\mathsf{V}$ contains the same number of vectors.
+  This number $n$ is called the dimension of $\mathsf{V}$, and $\mathsf{V}$ is said to be finite-dimensional,
+- Every linearly independent subset of $\mathsf{V}$ contains no more than $n$ vectors and can be extend to a basis for $\mathsf{V}$ by including appropriately chosen vectors.
+- Each generating set of $\mathsf{V}$ contains at least $n$ vectors and can be reduced to a basis for $\mathsf{V}$ by excluding appropriately chosen vectors.
 
 ### The Dimension of Subspaces
 
