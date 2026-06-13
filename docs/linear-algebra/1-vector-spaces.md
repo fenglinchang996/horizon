@@ -60,7 +60,7 @@ $$
 x = A + su + tv
 $$
 
-Here, $u$ is the vector pointing from $A$ to $B$, $v$ is the vector pointing from $A$ to $C$, and $s, t$ are any real numbers.
+Here, $A$ is identified with its position vector, $u$ is the vector pointing from $A$ to $B$, $v$ is the vector pointing from $A$ to $C$, and $s, t$ are any real numbers.
 :::
 
 ## 1.2 Vector Spaces
@@ -85,7 +85,7 @@ A **vector space** (or **linear space**) $\mathsf{V}$ over a field $F$ consists 
 :::
 
 > **Terminology Note:** Elements of the field $F$ are called **scalars**, and elements of the vector space $\mathsf{V}$ are called **vectors**.
-> Every vector space is regarded as a vector space over a given field and we often restrict our attention to the fields of real and complex numbers, which are denoted $R$ and $C$, respectively.
+> Every vector space is regarded as a vector space over a given field and we often restrict our attention to the fields of real and complex numbers, which are denoted $\mathbb{R}$ and $\mathbb{C}$, respectively.
 > Also note that the word "vector" is now being used to describe any element of a vector space, not the physical entity discussed in the previous section.
 
 ### Important Examples of Vector Spaces
@@ -168,18 +168,18 @@ for each $s \in S$.
 #### Polynomials as a Vector Space ($\mathsf{P}(F)$)
 
 ::: info Polynomials
-A polynomial with coefficients from a field $F$ is an expression of the form
+A polynomial with coefficients from a field $F$ is either the zero polynomial $0$ or an expression of the form
 
 $$
 f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \dots + a_{1}x + a_0
 $$
 
-where $n$ is a nonnegative integer and each $a_k$, called the **coefficient** of $x^k$, is in $F$.
+where $n$ is a nonnegative integer, each $a_k$, called the **coefficient** of $x^k$, is in $F$, and $a_n \ne 0$.
 :::
 
 ::: info The Degree of a Polynomial
-The degree of a polynomial is defined to be the largest exponent of $x$ that appears in the representation of the polynomial.
-$f(x)$ is called the **zero polynomial** if $f(x) = 0$, and its degree is defined to be -1. Polynomials of degree 0 may be written in the form $f(x) = c$ for some nonzero scalar $c$.
+The degree of a nonzero polynomial is defined to be the largest exponent of $x$ that appears with a nonzero coefficient.
+$f(x)$ is called the **zero polynomial** if $f(x) = 0$, and its degree is defined to be -1. A polynomial of degree 0 may be written in the form $f(x) = c$ for some nonzero scalar $c$.
 :::
 
 Two polynomials,
@@ -194,7 +194,7 @@ $$
 g(x) = b_{m}x^{m} + b_{m-1}x^{m-1} + \dots + b_{1}x + b_0
 $$
 
-are called equal if $m = n$ and $a_i = b_i$ for $i = 0, 1, \dots, n$.
+are called equal if, after adjoining zero coefficients to whichever polynomial has smaller degree, their corresponding coefficients are equal.
 
 Let
 
@@ -228,7 +228,7 @@ $$
 
 for $c \in F$.
 
-With these operations, the set of all polynomials with coefficients from $F$ is a vector space, which we denote by $P(F)$.
+With these operations, the set of all polynomials with coefficients from $F$ is a vector space, which we denote by $\mathsf{P}(F)$.
 
 ### Elementary Consequences of the Definition
 
@@ -239,7 +239,7 @@ If $x, y,$ and $z$ are vectors in a vector space $\mathsf{V}$ such that $x + z =
 :::
 
 ::: info Corollary 1.
-The vector $\mathsf{0}$ described in (VS 3) is unique.
+The vector $\mathbf{0}$ described in (VS 3) is unique.
 :::
 
 > The vector $\mathbf{0}$ is called the **zero vector** of $\mathsf{V}$.
@@ -253,9 +253,9 @@ The vector $y$ described in (VS 4) is unique.
 ::: info Theorem 1.2.
 In any vector space $\mathsf{V}$, the following statements are true:
 
-1. $0x = \mathsf{0}$ for each $x \in \mathsf{V}$.
+1. $0x = \mathbf{0}$ for each $x \in \mathsf{V}$.
 2. $(-a)x = -(ax) = a(-x)$ for each $a \in F$ and each $x \in \mathsf{V}$.
-3. $a\mathsf{0} = \mathsf{0}$ for each $a \in F$.
+3. $a\mathbf{0} = \mathbf{0}$ for each $a \in F$.
 
 :::
 
@@ -271,14 +271,15 @@ A subset $\mathsf{W}$ of a vector space $\mathsf{V}$ over a field $F$ is called 
 
 > $\mathsf{V}$ and $\{\mathbf{0}\}$ (the zero subspace of $\mathsf{V}$) are subspaces.
 
-Verifying all eight vector space axioms for a subset $\mathsf{W}$ can be tedious. However, because the vectors in $\mathsf{W}$ are also vectors in $\mathsf{V}$, properties that apply to all vectors in $\mathsf{V}$ (such as commutativity, associativity, and distributivity) are automatically inherited by the vectors in $W$. Therefore, to determine if a subset is a subspace, we only need to verify the existence of the zero vector and the closure of the operations.
+Verifying all eight vector space axioms for a subset $\mathsf{W}$ can be tedious. In principle, to show that $\mathsf{W}$ is a subspace, we must show that $\mathsf{W}$ is itself a vector space under the operations inherited from $\mathsf{V}$. However, because the vectors in $\mathsf{W}$ are also vectors in $\mathsf{V}$, properties that apply to all vectors in $\mathsf{V}$ (such as commutativity, associativity, and distributivity) are automatically inherited by the vectors in $\mathsf{W}$.
 
-Thus a subset $\mathsf{W}$ of a vector space $\mathsf{V}$ is a subspace of $\mathsf{V}$ if and only if the following 4 properties hold:
+Thus, in practice, to determine whether a subset is a subspace, it is enough to verify the following:
 
+- $\mathbf{0} \in \mathsf{W}$.
 - $x + y \in \mathsf{W}$ whenever $x \in \mathsf{W}$ and $y \in \mathsf{W}$. ($\mathsf{W}$ is **closed under addition**.)
-- $cx \in \mathsf{W}$ whenever $c \in F$ and $x \in \mathsf{W}$ ($\mathsf{W}$ is **closed under scalar multiplication**.)
-- $\mathsf{W}$ has zero vector.
-- Each vector in $\mathsf{W}$ has an additive inverse in $\mathsf{W}$. (This one is actually redundant)
+- $cx \in \mathsf{W}$ whenever $c \in F$ and $x \in \mathsf{W}$. ($\mathsf{W}$ is **closed under scalar multiplication**.)
+
+Once these conditions hold, additive inverses also lie in $\mathsf{W}$, since for any $x \in \mathsf{W}$ we have $-x = (-1)x \in \mathsf{W}$.
 
 > For a subset $W$ to be a subspace, it must be completely self-contained with respect to vector addition and scalar multiplication. If you take any vectors inside $W$ and perform these operations on them, the resulting vectors must not "escape" the subset $W$. Additionally, since it must be a vector space in its own right, it must contain the zero vector.
 
@@ -342,7 +343,8 @@ A subset $S$ of a vector space $\mathsf{V}$ **generates** (or **spans**) $\maths
 In this case, we also say that the vectors in $S$ generate, or span, $\mathsf{V}$.
 :::
 
-> If $S$ generates $\mathsf{V}$, it means every single vector in the entire space $\mathsf{V}$ can be expressed as some linear combination of the vectors in $S$. This is a powerful idea: it allows us to describe an infinite space using only a small, finite set of "building blocks."
+> If $S$ generates $\mathsf{V}$, it means every single vector in the entire space $\mathsf{V}$ can be expressed as some linear combination of the vectors in $S$.
+> This is a powerful idea: when such a generating set can be chosen to be finite, it allows us to describe the entire space using only finitely many "building blocks."
 
 ## 1.5 Linear Dependence and Linear Independence
 
@@ -385,8 +387,6 @@ $$
 
 - A set is linearly independent if and only if the only representation of $\mathbf{0}$ as linear combinations of its vectors are trivial representations.
 
-> Linear independence means every vector in the set brings "new" information to the span. No vector in an independent set can be "constructed" from the others. These vectors are effectively the "minimum necessary" to generate their span.
-
 ### Key Theorems
 
 ::: info Theorem 1.6
@@ -417,7 +417,6 @@ If $\beta$ is a basis for $\mathsf{V}$, we also say that the vectors of $\beta$ 
 :::
 
 > A basis is a "Goldilocks" set. It has enough vectors to reach everywhere in the space (spanning), but not so many that any of them are redundant (linearly independent).
-> In a sense, it is the most efficient generating set possible for $\mathsf{V}$.
 
 - $\varnothing$ is a basis of $\{\mathbf{0}\}$ since $\text{span}(\varnothing) = \{\mathbf{0}\}$ and $\varnothing$ is linearly independent.
 - The standard basis of $\mathsf{F}^n$ is $\{e_1, e_2, \dots, e_n\}$, where $e_1 = (1, 0, 0, \dots, 0), e_2 = (0, 1, 0, \dots, 0), \dots, e_n = (0, 0, 0, \dots, 1)$.
