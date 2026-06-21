@@ -176,6 +176,10 @@ export default defineConfig({
                 link: '/linear-algebra/1-vector-spaces',
               },
               {
+                text: 'Functions',
+                link: '/linear-algebra/appendix-b-functions',
+              },
+              {
                 text: 'Fields',
                 link: '/linear-algebra/appendix-c-fields',
               },
