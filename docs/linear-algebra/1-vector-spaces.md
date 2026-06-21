@@ -271,9 +271,12 @@ A subset $\mathsf{W}$ of a vector space $\mathsf{V}$ over a field $F$ is called 
 
 > $\mathsf{V}$ and $\{\mathbf{0}\}$ (the zero subspace of $\mathsf{V}$) are subspaces.
 
-Verifying all eight vector space axioms for a subset $\mathsf{W}$ can be tedious. In principle, to show that $\mathsf{W}$ is a subspace, we must show that $\mathsf{W}$ is itself a vector space under the operations inherited from $\mathsf{V}$. However, because the vectors in $\mathsf{W}$ are also vectors in $\mathsf{V}$, properties that apply to all vectors in $\mathsf{V}$ (such as commutativity, associativity, and distributivity) are automatically inherited by the vectors in $\mathsf{W}$.
+Verifying all eight vector space axioms for a subset $\mathsf{W}$ can be tedious.
+In principle, to show that $\mathsf{W}$ is a subspace, we must show that $\mathsf{W}$ is itself a vector space under the operations inherited from $\mathsf{V}$.
+However, because the vectors in $\mathsf{W}$ are also vectors in $\mathsf{V}$, properties that apply to all vectors in $\mathsf{V}$ (such as commutativity, associativity, and distributivity) are automatically inherited by the vectors in $\mathsf{W}$.
+That means, properties (VS 1), (VS 2), (VS 5), (VS 6), (VS 7), (VS 8) automatically hold for the vectors in any subset of the vector space.
 
-Thus, in practice, to determine whether a subset is a subspace, it is enough to verify the following:
+thus, in practice, to determine whether a subset is a subspace, it is enough to verify the following:
 
 - $\mathbf{0} \in \mathsf{W}$.
 - $x + y \in \mathsf{W}$ whenever $x \in \mathsf{W}$ and $y \in \mathsf{W}$. ($\mathsf{W}$ is **closed under addition**.)
