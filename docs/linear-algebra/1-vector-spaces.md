@@ -178,7 +178,13 @@ where $n$ is a nonnegative integer, each $a_k$, called the **coefficient** of $x
 :::
 
 ::: info The Degree of a Polynomial
-The degree of a nonzero polynomial is defined to be the largest exponent of $x$ that appears with a nonzero coefficient.
+The degree of a nonzero polynomial is defined to be the largest exponent of $x$ that appears in the presentation
+
+$$
+f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \dots + a_{1}x + a_0
+$$
+
+with a nonzero coefficient.
 $f(x)$ is called the **zero polynomial** if $f(x) = 0$, and its degree is defined to be -1. A polynomial of degree 0 may be written in the form $f(x) = c$ for some nonzero scalar $c$.
 :::
 
@@ -194,7 +200,7 @@ $$
 g(x) = b_{m}x^{m} + b_{m-1}x^{m-1} + \dots + b_{1}x + b_0
 $$
 
-are called equal if, after adjoining zero coefficients to whichever polynomial has smaller degree, their corresponding coefficients are equal.
+are called equal if $m=n$ and $a_i = b_i$ for $i = 0, 1, \dots, n$.
 
 Let
 
@@ -238,13 +244,14 @@ From the eight axioms, we can derive several basic algebraic properties of vecto
 If $x, y,$ and $z$ are vectors in a vector space $\mathsf{V}$ such that $x + z = y + z$, then $x = y$.
 :::
 
-::: info Corollary 1.
+::: info Theorem 1.1 Corollary 1
 The vector $\mathbf{0}$ described in (VS 3) is unique.
 :::
 
-> The vector $\mathbf{0}$ is called the **zero vector** of $\mathsf{V}$.
+> - The vector $\mathbf{0}$ is called the **zero vector** of $\mathsf{V}$.
+> - The set $\mathsf{V}$ contains only zero vector ($\mathsf{V} = \{\mathbf{0}\}$) is a vector space over $F$.
 
-::: info Corollary 2.
+::: info Theorem 1.1 Corollary 2
 The vector $y$ described in (VS 4) is unique.
 :::
 
@@ -266,7 +273,7 @@ In the study of vector spaces, we often find that certain subsets of a vector sp
 ### Formal Definition of a Subspace
 
 ::: info Definition
-A subset $\mathsf{W}$ of a vector space $\mathsf{V}$ over a field $F$ is called a **subspace** of $\mathsf{V}$ if $\mathsf{W}$ is a vector space over $F$ with the operations of addition and scalar multiplication defined on $\mathsf{V}$.
+A subset $\mathsf{W}$ of a vector space $\mathsf{V}$ over a field $F$ is called a **subspace** of $\mathsf{V}$ if $\mathsf{W}$ is a vector space over $F$ with the **operations of addition and scalar multiplication defined on $\mathsf{V}$**.
 :::
 
 > $\mathsf{V}$ and $\{\mathbf{0}\}$ (the zero subspace of $\mathsf{V}$) are subspaces.
@@ -357,11 +364,14 @@ It is desirable to find a "small" finite subset $S$ of $\mathsf{W}$ that generat
 
 ### Linear Dependence
 
+::: info Definition
 A subset $S$ of a vector space $\mathsf{V}$ is called **linearly dependent** if there exist a finite number of distinct vectors $u_1, u_2, \dots, u_n$ in $S$ and scalars $a_1, a_2, \dots, a_n$ in $F$, **not all zero**, such that:
 
 $$
 a_{1}u_{1} + a_{2}u_{2} + \dots + a_{n}u_{n} = \mathbf{0}
 $$
+
+:::
 
 For any vectors $u_1, u_2, \dots, u_n$, we have $a_{1}u_{1} + a_{2}u_{2} + \dots + a_{n}u_{n} = \mathbf{0}$ if $a_1 = a_2 = \dots = a_n = 0$.
 This is called the **trivial representation** of $\mathbf{0}$ as a linear combination of $u_1, u_2, \dots, u_n$.
@@ -372,12 +382,15 @@ Consequently, any subset of a vector space that contains the zero vector is auto
 
 ### Linear Independence
 
+::: info Definition
 A subset $S$ of a vector space $\mathsf{V}$ that is not linearly dependent is called **linearly independent**.
 In other words, for any finite number of distinct vectors $u_1, u_2, \dots, u_n$ in $S$, the only way to satisfy the equation $\sum a_{i}u_{i} = \mathbf{0}$ is the **trivial representation**:
 
 $$
 a_1 = a_2 = \dots = a_n = 0
 $$
+
+:::
 
 - The empty set is linearly independent, for linearly dependent sets must be nonempty.
 - A set consisting of a single nonzero vector is linearly independent.
@@ -423,7 +436,7 @@ If $\beta$ is a basis for $\mathsf{V}$, we also say that the vectors of $\beta$ 
 
 - $\varnothing$ is a basis of $\{\mathbf{0}\}$ since $\text{span}(\varnothing) = \{\mathbf{0}\}$ and $\varnothing$ is linearly independent.
 - The standard basis of $\mathsf{F}^n$ is $\{e_1, e_2, \dots, e_n\}$, where $e_1 = (1, 0, 0, \dots, 0), e_2 = (0, 1, 0, \dots, 0), \dots, e_n = (0, 0, 0, \dots, 1)$.
-- The basis of $M_{m \times n}(F)$ is $\{E_{ij}: 1 \le i \le m, 1 \le j \le n\}$, where $E_{ij}$ is the matrix with a 1 in the $(i,j)$ position and 0 elsewhere.
+- The basis of $M_{m \times n}(F)$ is $\{E^{ij}: 1 \le i \le m, 1 \le j \le n\}$, where $E^{ij}$ is the matrix with a 1 in the $(i,j)$ position and 0 elsewhere.
 - For $\mathsf{P}_n(F)$, ${\{1, x, x^2, \dots, x^n\}}$ is the standard basis.
 - For $\mathsf{P}(F)$, $\{1, x, x^2, \dots\}$ is a basis.
 
@@ -459,12 +472,12 @@ Then $m \le n$ and there exists a subset $H$ of $G$ containing exactly $n - m$ v
 > This theorem implies that the "span" capacity sets an upper limit on how many independent directions you can have.
 > You cannot find more "independent directions" than the number of "building blocks" you used to build the space.
 
-::: info Corollary 1
+::: info Theorem 1.10 Corollary 1
 Let $\mathsf{V}$ be a vector space having a finite basis.
 Then all bases for $\mathsf{V}$ are finite, and every basis for $\mathsf{V}$ contains the same number of vectors.
 :::
 
-### Dimension of a Vector Space
+### The Dimension of a Vector Space
 
 ::: info Definition
 
@@ -475,9 +488,14 @@ Then all bases for $\mathsf{V}$ are finite, and every basis for $\mathsf{V}$ con
 
 :::
 
-> If $\mathsf{V}$ is a finite-dimensional vector space, then no linearly independent subset of $\mathsf{V}$ can contain more than $\text{dim}(\mathsf{V})$ vectors.
+> In the terminology of dimension, the first conclusion in the replacement theorem states that If $\mathsf{V}$ is a finite-dimensional vector space, then no linearly independent subset of $\mathsf{V}$ can contain more than $\text{dim}(\mathsf{V})$ vectors.
 
-::: info Corollary 2
+- $dim(\{\mathbf{0}\}) = 0$.
+- $dim(\mathsf{F}^n) = n$.
+- $dim(\mathsf{M})_{m \times n}(F) = mn$.
+- $dim(\mathsf{P}_n(F)) = n + 1$.
+
+::: info Theorem 1.10 Corollary 2
 Let $\mathsf{V}$ be a vector space with $\text{dim}(\mathsf{V}) = n$:
 
 1. Any finite generating set for $\mathsf{V}$ must contain at least $n$ vectors. If it has exactly $n$ vectors, it is a basis.
@@ -494,6 +512,14 @@ We can summarize the main results of these definitions, theorems, and corollarie
   This number $n$ is called the dimension of $\mathsf{V}$, and $\mathsf{V}$ is said to be finite-dimensional,
 - Every linearly independent subset of $\mathsf{V}$ contains no more than $n$ vectors and can be extended to a basis for $\mathsf{V}$ by including appropriately chosen vectors.
 - Each generating set of $\mathsf{V}$ contains at least $n$ vectors and can be reduced to a basis for $\mathsf{V}$ by excluding appropriately chosen vectors.
+
+### An Overview of Dimension and Its Consequences
+
+- A basis for a vector space $\mathsf{V}$ is a linearly independent subset of $\mathsf{V}$ that generates $\mathsf{V}$.
+- If $\mathsf{V}$ has a finite basis, then every basis for $\mathsf{V}$ contains the same number of vectors.
+- If the dimension of $\mathsf{V}$ is $n$, every basis for $\mathsf{V}$ contains exactly $n$ vectors.
+- Every linearly independent subset of $\mathsf{V}$ contains no more than $n$ vectors and can be extended to a basis for $\mathsf{V}$ by including appropriately chosen vectors.
+- Each generating set for $\mathsf{V}$ contains at least $n$ vectors and can be reduced to a basis for $\mathsf{V}$ by excluding appropriately chosen vectors.
 
 ### The Dimension of Subspaces
 
