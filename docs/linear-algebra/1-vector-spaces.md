@@ -464,7 +464,7 @@ Let $\mathsf{V}$ be a vector space having a finite basis.
 Then all bases for $\mathsf{V}$ are finite, and every basis for $\mathsf{V}$ contains the same number of vectors.
 :::
 
-### Dimension of a Vector Space
+### The Dimension of a Vector Space
 
 ::: info Definition
 
@@ -494,6 +494,14 @@ We can summarize the main results of these definitions, theorems, and corollarie
   This number $n$ is called the dimension of $\mathsf{V}$, and $\mathsf{V}$ is said to be finite-dimensional,
 - Every linearly independent subset of $\mathsf{V}$ contains no more than $n$ vectors and can be extended to a basis for $\mathsf{V}$ by including appropriately chosen vectors.
 - Each generating set of $\mathsf{V}$ contains at least $n$ vectors and can be reduced to a basis for $\mathsf{V}$ by excluding appropriately chosen vectors.
+
+### An Overview of Dimension and Its Consequences
+
+- A basis for a vector space $\mathsf{V}$ is a linearly independent subset of $\mathsf{V}$ that generates $\mathsf{V}$.
+- If $\mathsf{V}$ has a finite basis, then every basis for $\mathsf{V}$ contains the same number of vectors.
+- If the dimension of $\mathsf{V}$ is $n$, every basis for $\mathsf{V}$ contains exactly $n$ vectors.
+- Every linearly independent subset of $\mathsf{V}$ contains no more than $n$ vectors and can be extended to a basis for $\mathsf{V}$ by including appropriately chosen vectors.
+- Each generating set for $\mathsf{V}$ contains at least $n$ vectors and can be reduced to a basis for $\mathsf{V}$ by excluding appropriately chosen vectors.
 
 ### The Dimension of Subspaces
 
