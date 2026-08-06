@@ -39,8 +39,6 @@ For any set $A$, the **identity function** $I_A: A \to A$ is defined by
 $$I_A(x) = x \quad \text{for all } x \in A$$
 :::
 
----
-
 ## 4. One-to-One and Onto Functions
 
 ::: info Definition
@@ -55,8 +53,6 @@ A function $f: A \to B$ is said to be **onto** (or **surjective**) if the range 
 A function that is both one-to-one and onto is called a **one-to-one correspondence** (or a **bijection**).
 :::
 
----
-
 ## 5. Composition of Functions
 
 ::: info Definition
@@ -69,8 +65,6 @@ $$(g \circ f)(x) = g(f(x)) \quad \text{for all } x \in A$$
 Let $f: A \to B$, $g: B \to C$, and $h: C \to D$ be functions. Then
 $$h \circ (g \circ f) = (h \circ g) \circ f$$
 :::
-
----
 
 ## 6. Invertibility and Inverses
 

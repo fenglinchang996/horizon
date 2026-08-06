@@ -176,6 +176,10 @@ export default defineConfig({
                 link: '/linear-algebra/1-vector-spaces',
               },
               {
+                text: 'Linear Transformations and Matrices',
+                link: '/linear-algebra/2-linear-transformations-and-matrices',
+              },
+              {
                 text: 'Functions',
                 link: '/linear-algebra/appendix-b-functions',
               },
