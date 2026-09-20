@@ -172,19 +172,19 @@ export default defineConfig({
             collapsed: true,
             items: [
               {
-                text: 'Vector Spaces',
+                text: '1. Vector Spaces',
                 link: '/linear-algebra/1-vector-spaces',
               },
               {
-                text: 'Linear Transformations and Matrices',
+                text: '2. Linear Transformations and Matrices',
                 link: '/linear-algebra/2-linear-transformations-and-matrices',
               },
               {
-                text: 'Functions',
+                text: 'Appendix B. Functions',
                 link: '/linear-algebra/appendix-b-functions',
               },
               {
-                text: 'Fields',
+                text: 'Appendix C. Fields',
                 link: '/linear-algebra/appendix-c-fields',
               },
             ],

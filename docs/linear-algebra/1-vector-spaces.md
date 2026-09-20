@@ -1,4 +1,4 @@
-# Vector Spaces
+# 1. Vector Spaces
 
 ## 1.1 Introduction
 
@@ -15,7 +15,7 @@ An entity possessing both magnitude and direction (e.g., force, velocity). Geome
 #### Vector Addition
 
 ::: info Parallelogram Law for Vector Addition
-The sum $x + y$ of two vectors $x$ and $y$ acting at the same point $P$ can be represented as the diagonal of the parallelogram having $x$ and $y$ as adjacent sides.
+The sum of two vectors $x$ and $y$ that act at the same point $P$ is the vector beginning at $P$ that is represented by the diagonal of parallelogram having $x$ and $y$ as adjacent sides.
 :::
 
 #### Scalar Multiplication
@@ -50,7 +50,8 @@ $$
 x = u + t(v - u)
 $$
 
-Here, $u$ and $v$ are the position vectors pointing from the origin to points $A$ and $B$ respectively, and $t$ is any real number. The term $v - u$ represents the direction vector from $A$ to $B$.
+Here, $x$ denotes an arbitrary point on the line, $u$ and $v$ are the position vectors pointing from the origin to points $A$ and $B$ respectively, and $t$ is any real number.
+The term $v - u$ represents the direction vector from $A$ to $B$.
 :::
 
 ::: info Equation of a Plane
@@ -60,7 +61,7 @@ $$
 x = A + su + tv
 $$
 
-Here, $A$ is identified with its position vector, $u$ is the vector pointing from $A$ to $B$, $v$ is the vector pointing from $A$ to $C$, and $s, t$ are any real numbers.
+Here, $x$ denotes an arbitrary point on the plane, $A$ is identified with its position vector, $u$ is the vector pointing from $A$ to $B$, $v$ is the vector pointing from $A$ to $C$, and $s, t$ are any real numbers.
 :::
 
 ## 1.2 Vector Spaces
@@ -168,24 +169,24 @@ for each $s \in S$.
 #### Polynomials as a Vector Space ($\mathsf{P}(F)$)
 
 ::: info Polynomials
-A polynomial with coefficients from a field $F$ is either the zero polynomial $0$ or an expression of the form
+A polynomial with coefficients from a field $F$ is an expression of the form
 
 $$
 f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \dots + a_{1}x + a_0
 $$
 
-where $n$ is a nonnegative integer, each $a_k$, called the **coefficient** of $x^k$, is in $F$, and $a_n \ne 0$.
+where $n$ is a nonnegative integer and each $a_k$, called the **coefficient** of $x^k$, is in $F$.
 :::
 
 ::: info The Degree of a Polynomial
-The degree of a nonzero polynomial is defined to be the largest exponent of $x$ that appears in the presentation
+If $f(x) = 0$, that is, if $a_n = a_{n-1} = \dots = a_0 = 0$, then $f(x)$ is called the **zero polynomial** and, for convenience, its degree is defined to be $-1$; otherwise, the **degree** of a polynomial is defined to be the largest exponent of $x$ that appears in the representation
 
 $$
 f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \dots + a_{1}x + a_0
 $$
 
 with a nonzero coefficient.
-$f(x)$ is called the **zero polynomial** if $f(x) = 0$, and its degree is defined to be -1. A polynomial of degree 0 may be written in the form $f(x) = c$ for some nonzero scalar $c$.
+Note that the polynomials of degree zero may be written in the form $f(x) = c$ for some nonzero scalar $c$.
 :::
 
 Two polynomials,
@@ -278,20 +279,7 @@ A subset $\mathsf{W}$ of a vector space $\mathsf{V}$ over a field $F$ is called 
 
 > $\mathsf{V}$ and $\{\mathbf{0}\}$ (the zero subspace of $\mathsf{V}$) are subspaces.
 
-Verifying all eight vector space axioms for a subset $\mathsf{W}$ can be tedious.
-In principle, to show that $\mathsf{W}$ is a subspace, we must show that $\mathsf{W}$ is itself a vector space under the operations inherited from $\mathsf{V}$.
-However, because the vectors in $\mathsf{W}$ are also vectors in $\mathsf{V}$, properties that apply to all vectors in $\mathsf{V}$ (such as commutativity, associativity, and distributivity) are automatically inherited by the vectors in $\mathsf{W}$.
-That means, properties (VS 1), (VS 2), (VS 5), (VS 6), (VS 7), (VS 8) automatically hold for the vectors in any subset of the vector space.
-
-thus, in practice, to determine whether a subset is a subspace, it is enough to verify the following:
-
-- $\mathbf{0} \in \mathsf{W}$.
-- $x + y \in \mathsf{W}$ whenever $x \in \mathsf{W}$ and $y \in \mathsf{W}$. ($\mathsf{W}$ is **closed under addition**.)
-- $cx \in \mathsf{W}$ whenever $c \in F$ and $x \in \mathsf{W}$. ($\mathsf{W}$ is **closed under scalar multiplication**.)
-
-Once these conditions hold, additive inverses also lie in $\mathsf{W}$, since for any $x \in \mathsf{W}$ we have $-x = (-1)x \in \mathsf{W}$.
-
-> For a subset $W$ to be a subspace, it must be completely self-contained with respect to vector addition and scalar multiplication. If you take any vectors inside $W$ and perform these operations on them, the resulting vectors must not "escape" the subset $W$. Additionally, since it must be a vector space in its own right, it must contain the zero vector.
+Properties (VS 1), (VS 2), (VS 5), (VS 6), (VS 7), and (VS 8) are inherited from $\mathsf{V}$.
 
 ### The Subspace Test (Theorem 1.3)
 
@@ -302,6 +290,17 @@ Let $\mathsf{V}$ be a vector space and $\mathsf{W}$ a subset of $\mathsf{V}$. Th
 2. $x + y \in \mathsf{W}$ whenever $x \in \mathsf{W}$ and $y \in \mathsf{W}$ (This is known as being **closed under addition**).
 3. $cx \in \mathsf{W}$ whenever $c \in F$ and $x \in \mathsf{W}$ (This is known as being **closed under scalar multiplication**).
 
+:::
+
+> Once these conditions hold, additive inverses also lie in $\mathsf{W}$, since for any $x \in \mathsf{W}$ we have $-x = (-1)x \in \mathsf{W}$.
+
+> For a subset $W$ to be a subspace, it must be completely self-contained with respect to vector addition and scalar multiplication. If you take any vectors inside $W$ and perform these operations on them, the resulting vectors must not "escape" the subset $W$. Additionally, since it must be a vector space in its own right, it must contain the zero vector.
+
+### Polynomials of Degree at Most $n$
+
+::: info $\mathsf{P}_n(F)$
+Let $n$ be a nonnegative integer, and let $\mathsf{P}_n(F)$ consist of all polynomials in $\mathsf{P}(F)$ having degree less than or equal to $n$.
+It therefore follows from Theorem 1.3 that $\mathsf{P}_n(F)$ is a subspace of $\mathsf{P}(F)$.
 :::
 
 ### Intersection of Subspaces (Theorem 1.4)
@@ -329,7 +328,6 @@ In this case, we also say that $v$ is a linear combination of $u_1, u_2, \dots, 
 
 > A linear combination is the most general way to construct a new vector using addition and scalar multiplication.
 > Geometrically, if you have two non-parallel vectors in $\mathbb{R}^3$, their linear combinations fill out a 2D plane.
-> The term "linear" signifies that we only use first-power scaling and addition—no multiplying vectors by each other or applying non-linear functions.
 
 ### 2. The Span of a Set
 
@@ -340,7 +338,7 @@ For convenience, we define $\text{span}(\varnothing) = \{\mathbf{0}\}$.
 :::
 
 ::: info Theorem 1.5
-The span of any subset $S$ of a vector space $\mathsf{V}$ is a **subspace** of $\mathsf{V}$.
+The span of any subset $S$ of a vector space $\mathsf{V}$ is a **subspace** of $\mathsf{V}$ that contains $S$.
 Moreover, any subspace of $\mathsf{V}$ that contains $S$ must also contain the span of $S$.
 :::
 
@@ -394,13 +392,6 @@ $$
 
 - The empty set is linearly independent, for linearly dependent sets must be nonempty.
 - A set consisting of a single nonzero vector is linearly independent.
-  For if $\{u\}$ is linearly dependent, then $au = \mathbf{0}$ for some nonzero scalar $a$.
-  Thus
-
-  $$
-  u = a^{-1}(au) = a^{-1}\mathbf{0} = \mathbf{0}
-  $$
-
 - A set is linearly independent if and only if the only representation of $\mathbf{0}$ as linear combinations of its vectors are trivial representations.
 
 ### Key Theorems
@@ -436,7 +427,7 @@ If $\beta$ is a basis for $\mathsf{V}$, we also say that the vectors of $\beta$ 
 
 - $\varnothing$ is a basis of $\{\mathbf{0}\}$ since $\text{span}(\varnothing) = \{\mathbf{0}\}$ and $\varnothing$ is linearly independent.
 - The standard basis of $\mathsf{F}^n$ is $\{e_1, e_2, \dots, e_n\}$, where $e_1 = (1, 0, 0, \dots, 0), e_2 = (0, 1, 0, \dots, 0), \dots, e_n = (0, 0, 0, \dots, 1)$.
-- The basis of $M_{m \times n}(F)$ is $\{E^{ij}: 1 \le i \le m, 1 \le j \le n\}$, where $E^{ij}$ is the matrix with a 1 in the $(i,j)$ position and 0 elsewhere.
+- In $\mathsf{M}_{m \times n}(F)$, let $E^{ij}$ denote the matrix whose only nonzero entry is a 1 in the $i$th row and $j$th column. Then $\{E^{ij}: 1 \le i \le m, 1 \le j \le n\}$ is a basis for $\mathsf{M}_{m \times n}(F)$.
 - For $\mathsf{P}_n(F)$, ${\{1, x, x^2, \dots, x^n\}}$ is the standard basis.
 - For $\mathsf{P}(F)$, $\{1, x, x^2, \dots\}$ is a basis.
 
@@ -482,21 +473,21 @@ Then all bases for $\mathsf{V}$ are finite, and every basis for $\mathsf{V}$ con
 ::: info Definition
 
 - **Finite-Dimensional:** A vector space is called finite-dimensional if it has a basis consisting of a finite number of vectors.
+- **Dimension:** The unique integer $n$ such that every basis for $\mathsf{V}$ contains exactly $n$ elements is called the **dimension** of $\mathsf{V}$ and is denoted by $\dim(\mathsf{V})$.
 - **Infinite-Dimensional:** A vector space that is not finite-dimensional is called infinite-dimensional.
-- **Dimension:** The unique number of vectors in each basis for $\mathsf{V}$ is called the **dimension** of $\mathsf{V}$ and is denoted by $\text{dim}(\mathsf{V})$.
-- **The Zero Space:** By convention, $\text{dim}(\{0\}) = 0$ (the basis is the empty set $\varnothing$).
+- **The Zero Space:** By convention, $\dim(\{0\}) = 0$ (the basis is the empty set $\varnothing$).
 
 :::
 
-> In the terminology of dimension, the first conclusion in the replacement theorem states that If $\mathsf{V}$ is a finite-dimensional vector space, then no linearly independent subset of $\mathsf{V}$ can contain more than $\text{dim}(\mathsf{V})$ vectors.
+> In the terminology of dimension, the first conclusion in the replacement theorem states that If $\mathsf{V}$ is a finite-dimensional vector space, then no linearly independent subset of $\mathsf{V}$ can contain more than $\dim(\mathsf{V})$ vectors.
 
-- $dim(\{\mathbf{0}\}) = 0$.
-- $dim(\mathsf{F}^n) = n$.
-- $dim(\mathsf{M})_{m \times n}(F) = mn$.
-- $dim(\mathsf{P}_n(F)) = n + 1$.
+- $\dim(\{\mathbf{0}\}) = 0$.
+- $\dim(\mathsf{F}^n) = n$.
+- $\dim(\mathsf{M}_{m \times n}(F)) = mn$.
+- $\dim(\mathsf{P}_n(F)) = n + 1$.
 
 ::: info Theorem 1.10 Corollary 2
-Let $\mathsf{V}$ be a vector space with $\text{dim}(\mathsf{V}) = n$:
+Let $\mathsf{V}$ be a vector space with $\dim(\mathsf{V}) = n$:
 
 1. Any finite generating set for $\mathsf{V}$ must contain at least $n$ vectors. If it has exactly $n$ vectors, it is a basis.
 2. Any linearly independent subset of $\mathsf{V}$ that contains exactly $n$ vectors is a basis for $\mathsf{V}$.
@@ -505,28 +496,20 @@ Let $\mathsf{V}$ be a vector space with $\text{dim}(\mathsf{V}) = n$:
 
 :::
 
-We can summarize the main results of these definitions, theorems, and corollaries:
-
-- A basis for a vector space $\mathsf{V}$ is a linearly independent subset of $\mathsf{V}$ that generates $\mathsf{V}$.
-- If $\mathsf{V}$ has a finite basis, then every basis for $\mathsf{V}$ contains the same number of vectors.
-  This number $n$ is called the dimension of $\mathsf{V}$, and $\mathsf{V}$ is said to be finite-dimensional,
-- Every linearly independent subset of $\mathsf{V}$ contains no more than $n$ vectors and can be extended to a basis for $\mathsf{V}$ by including appropriately chosen vectors.
-- Each generating set of $\mathsf{V}$ contains at least $n$ vectors and can be reduced to a basis for $\mathsf{V}$ by excluding appropriately chosen vectors.
-
 ### An Overview of Dimension and Its Consequences
 
 - A basis for a vector space $\mathsf{V}$ is a linearly independent subset of $\mathsf{V}$ that generates $\mathsf{V}$.
-- If $\mathsf{V}$ has a finite basis, then every basis for $\mathsf{V}$ contains the same number of vectors.
-- If the dimension of $\mathsf{V}$ is $n$, every basis for $\mathsf{V}$ contains exactly $n$ vectors.
-- Every linearly independent subset of $\mathsf{V}$ contains no more than $n$ vectors and can be extended to a basis for $\mathsf{V}$ by including appropriately chosen vectors.
-- Each generating set for $\mathsf{V}$ contains at least $n$ vectors and can be reduced to a basis for $\mathsf{V}$ by excluding appropriately chosen vectors.
+- If $\mathsf{V}$ has a finite basis, then every basis for $\mathsf{V}$ contains the same number of vectors. This number $n$ is called the dimension of $\mathsf{V}$, and $\mathsf{V}$ is said to be finite-dimensional.
+- Thus if the dimension of $\mathsf{V}$ is $n$, then every basis for $\mathsf{V}$ contains exactly $n$ vectors.
+- Moreover, every linearly independent subset of $\mathsf{V}$ contains no more than $n$ vectors and can be extended to a basis for $\mathsf{V}$ by including appropriately chosen vectors.
+- Also, each generating set for $\mathsf{V}$ contains at least $n$ vectors and can be reduced to a basis for $\mathsf{V}$ by excluding appropriately chosen vectors.
 
 ### The Dimension of Subspaces
 
 ::: info Theorem 1.11
 Let $\mathsf{W}$ be a subspace of a finite-dimensional vector space $\mathsf{V}$.
-Then $\mathsf{W}$ is finite-dimensional and $\text{dim}(\mathsf{W}) \leq \text{dim}(\mathsf{V})$.
-Moreover, if $\text{dim}(\mathsf{W}) = \text{dim}(\mathsf{V})$, then $\mathsf{V} = \mathsf{W}$.
+Then $\mathsf{W}$ is finite-dimensional and $\dim(\mathsf{W}) \leq \dim(\mathsf{V})$.
+Moreover, if $\dim(\mathsf{W}) = \dim(\mathsf{V})$, then $\mathsf{V} = \mathsf{W}$.
 :::
 
 ::: info Corollary
